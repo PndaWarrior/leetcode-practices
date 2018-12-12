@@ -1,4 +1,5 @@
 This question is a math question.
+https://www.programcreek.com/2012/12/leetcode-median-of-two-sorted-arrays-java/
 
 First we need to understand what exactly is a median.
 
