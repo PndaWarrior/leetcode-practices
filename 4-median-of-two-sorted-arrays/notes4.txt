@@ -27,11 +27,12 @@ startpoint2, the two starting points, since we cannot create new array each time
 
 
 Then we need to figure out the base cases, there are total of 3.
-First of all, if K is 1, then we know for a fact that the median has to be the first number of either array1 or array2, whichever is smaller.
-If the start point of array 1 is >= than length of array 1, then we know the median is in the second array and is the K + startpoint2 -1 number.
+First of all, if the start point of array 1 is >= than length of array 1, then we know the median is in the second array and is the K + startpoint2 -1 number.
 Why? 
 two cases, if array1 has length of 0, K = total/2 which is just length of array2/2
 if array1 has length of a small number, and the startpoint of 1 is larger than that, then in later calculation, we would subtract out the number of items we dropped from array1, so K is total/2-number of items in array1
+
+if K is 1, then we know for a fact that the median has to be the first number of either array1 or array2, whichever is smaller.
 
 
 Now that we have the base cases, we need to start simulating how to find the kth number,
