@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="1-two-sum"/>
+	<classpathentry kind="src" path="2-add-two-numbers"/>
+	<classpathentry kind="src" path="3-longest-substirng-without-repeating-characters"/>
+	<classpathentry kind="src" path="4-median-of-two-sorted-arrays"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

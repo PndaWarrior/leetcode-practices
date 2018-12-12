@@ -1,0 +1,7 @@
+There's nothing too fancy about this question.
+
+We should add the two numbers as you would have when you try to perform addition operation on paper.  Start from the least significant digit first, which is the head of ListNode 1 and ListNode 2.
+
+Use a variable to keep track of carries, if there's no carry then don't need to create a new node for the result.
+
+Be careful, at the end of the while loop, we should check whether or not we SHOULD have a next node for answer, which would only be the case if l1 has next, or l2 has next, or carry is 1.

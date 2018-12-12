@@ -1,0 +1,16 @@
+Brute force way to do this would be O(n^2), check every substring that doesn't have a repeating character, then save the size of the largest substring.
+
+
+A better way to do this is to use Sliding Windows.
+
+For Example : abcdabb
+
+i is the left side of the window, j is the right side of the window.
+
+We can save a temporary result whenever we try find a substring that has no repeating characters
+For each character, we save the charcter and it's index to a map, so for each character, it will have the largest index of that character.
+
+ababcdefga, when i = 0, j = 1, it will save a result of 2, which is j - 1 + 1
+when i = 0, j = 2, a already exists, then we can move i to the right.
+
+where do we move it though?  there's two options, one is for the left side index move to the right one, another is to move it to the right of the saved repeating character's last found index, which ever one is larger.  

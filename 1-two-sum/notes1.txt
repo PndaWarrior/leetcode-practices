@@ -1,0 +1,3 @@
+Brute force is simple, double for loop to find the target.
+
+To optimize, understand the idea that when you are looping through the elements, the answer must be [target - current] if there's any.  So just store the elements you passed into a map, so for every element as you're looping through it, check the map to see if there was a number that equals to [target - current].  If that exists then you can stop the loop since you already found the answer, which is the current index and the index that had [target - current].
