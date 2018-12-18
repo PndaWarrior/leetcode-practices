@@ -1,0 +1,9 @@
+The easiest way to solve this is by moving the center and expanding from the center to try and find the palindrome.
+
+For each index, we would check two cases, first case is where the current index is the center of a palindrome and second case is where the center is between the current index and the next index.
+
+Some special notes written in the code itself.
+Remember that, 5/2 and 4/2 are the same thing in java Integers, because decimals are dropped when dividing an integer.
+Remember that, when you right a While loop check, it will always do one last step, take into consideration whether you want that last step to be included or not.
+
+Remeber, javascript is not strongly typed, if we want to do the same calculation as java where 5/2 = 4/2, we have to use the floor method.
