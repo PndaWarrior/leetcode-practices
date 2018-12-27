@@ -1,0 +1,9 @@
+My solution is just a bunch of switch statements.
+
+We know what each of the value in the Roman character is worth, so we have a switch case for each character.
+HOWEVER, we have a couple of special cases,
+I is normally +1 but if it comes before V or X, it has -1 value
+X is normally + 10 but if it comes before L or C, it has - 10
+C is normally + 100 but if it comes before D or M, it has - 100
+
+As long as we take care of the special cases, then we should be good.

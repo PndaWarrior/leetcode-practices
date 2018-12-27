@@ -1,0 +1,9 @@
+The basic idea I have is, set the first string as the current Longest common Prefix.
+
+Check the current longest prefix with the current string, find the longest prefix and save the result as the current longest common prefix.
+Keep repeating for every character in the array.
+
+This has O(m*n), where m is number of strings in array, and n is the number of characters in a string where ALL of the strings in the array are the exact same.
+
+
+To optimize this, we can use a binary search to find the longest common prefix, rather than a linear search, this will make it so the run time is O(m*log(n));

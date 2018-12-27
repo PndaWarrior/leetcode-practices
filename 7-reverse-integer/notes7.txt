@@ -1,0 +1,9 @@
+The algorithm is pretty simple, whenever we % 10 the input, we get the last digit of the integer, which will be used as the first digit of the output.
+
+The inputs and outputs are essentially a stack, we % 10 to "pop" the last digit of the input, / 10 which gets rid of the top digit.
+For the output, we multiply the current output by 10 to allow input of another digit, then just add the "pop" value from the input.
+
+However, we need to add a mechanism to check for overflows, because when we try to "add the pop" value to the output variable, we may get an overflow, since we can only take in integers within the 32-bit signed range: [-2^31, 2^31 - 1].
+
+So before stacking the integer to the current output, we check if the current output is smaller than Integer.MIN_VALUE/10 or bigger than Integer.MAX_VALUE/10.  If it is, then we can't add anymore, we need to just return 0.
+But this only checks up to the second to last digit of the max and min value, we also need to check the "pop" value.  So we also need to check the case that if current output is equal to Integer.MAX_VALUE/10 or Integer.MIN_VALUE/10, then we check if pop value is <-8 or > 7, becasue if they are, then we would get a overflow as well.

@@ -5,5 +5,11 @@
 	<classpathentry kind="src" path="2-add-two-numbers"/>
 	<classpathentry kind="src" path="3-longest-substirng-without-repeating-characters"/>
 	<classpathentry kind="src" path="4-median-of-two-sorted-arrays"/>
+	<classpathentry kind="src" path="0-playground"/>
+	<classpathentry kind="src" path="5-longest-palindromic-substring"/>
+	<classpathentry kind="src" path="13-roman-to-integer"/>
+	<classpathentry kind="src" path="7-reverse-integer"/>
+	<classpathentry kind="src" path="9-palindrome-number"/>
+	<classpathentry kind="src" path="14-longest-common-prefix"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,0 +1,3 @@
+The easiest way I can think of is to reverse the number and then just check if the reversed number is equal to the input.
+
+We learned to reverse an integer back in question 7.
