@@ -1,0 +1,9 @@
+The algorithm is simple.
+
+We know that for a valid parentheses, there are two main conditions.
+1. The open bracket and close parentheses must have the exact same numbers
+2. When we encounter an open parentheses, the following must either be a matching close parentheses or another open parentheses
+
+Therefore, we just keep all the open parentheses that we encounter onto a stack, if we find a close parentheses we check to see if the top of the stack is a matching open parentheses, if it is then we can simply pop the stack, if not then we know it's not a valid parentheses.
+
+At the end of the loop, we need to check if the stack is empty, if it is, then there's no more parentheses to be matched so it's a valid parentheses

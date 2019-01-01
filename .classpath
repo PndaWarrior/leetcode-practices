@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="src" path="1-two-sum"/>
-	<classpathentry kind="src" path="2-add-two-numbers"/>
-	<classpathentry kind="src" path="3-longest-substirng-without-repeating-characters"/>
-	<classpathentry kind="src" path="4-median-of-two-sorted-arrays"/>
-	<classpathentry kind="src" path="0-playground"/>
-	<classpathentry kind="src" path="5-longest-palindromic-substring"/>
-	<classpathentry kind="src" path="13-roman-to-integer"/>
-	<classpathentry kind="src" path="7-reverse-integer"/>
-	<classpathentry kind="src" path="9-palindrome-number"/>
-	<classpathentry kind="src" path="14-longest-common-prefix"/>
+	<classpathentry kind="src" path="000-playground"/>
+	<classpathentry kind="src" path="001-two-sum"/>
+	<classpathentry kind="src" path="002-add-two-numbers"/>
+	<classpathentry kind="src" path="003-longest-substirng-without-repeating-characters"/>
+	<classpathentry kind="src" path="004-median-of-two-sorted-arrays"/>
+	<classpathentry kind="src" path="005-longest-palindromic-substring"/>
+	<classpathentry kind="src" path="007-reverse-integer"/>
+	<classpathentry kind="src" path="009-palindrome-number"/>
+	<classpathentry kind="src" path="013-roman-to-integer"/>
+	<classpathentry kind="src" path="014-longest-common-prefix"/>
+	<classpathentry kind="src" path="020-valid-parentheses"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
