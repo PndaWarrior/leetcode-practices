@@ -1,0 +1,22 @@
+The approach is simple, for EACH row in A, flip the digits between 0 and row.length-1, then 1 and row.length-2 and so on, until the middle.
+
+The most difficult part of this problem is how to find the middle.
+When we create the for loop, understand that index i is not just the index, it can also be used to count track how many to count back from the end.
+
+For example, index 0, the corresponding end is length - 1
+index 1, the corresponding end is length - 2
+
+What about the middle though?
+There are two cases, one is where middle is an index, and one where middle is between two index.
+
+To calculate this out, let's see the case of length  = 5, and length = 6
+
+middle index when length = 5 is 2, which is 3 from the front and also 3 from the back, therefore middle is (5 + 1) / 2
+middle is between index of 2 and 3, which is also 3 from the front and 3 form the back, therefore middle is 6/2, but in java, 7/2 is still 3, so the easy way to do calculate the middle would just be (length+1)/2
+
+
+How do we invert between 0 and 1?
+We can use Exclusive Or, which returns true only if the two inputs differ, else it will return false.
+So if we apply this to the elements
+0 exclusive or 1, since two are different so 1 will be returned
+1 exclusive or 1, since two are the same so 0 will be returned

@@ -1,0 +1,6 @@
+No difficult algorithm
+
+If U, then y goes up 1, if D, then y goes down 1.
+Same with L and R
+
+Return true if both x and y are 0.

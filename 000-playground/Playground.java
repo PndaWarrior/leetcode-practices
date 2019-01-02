@@ -4,9 +4,13 @@ public class Playground {
 	public static void main(String[] args) {
 		
 	
-		String temp = "BLAHBLAH.blah";
+		int i = 0;
 		
-		System.out.println(temp.replace(".", ""));
+		boolean x = true;
+		
+		System.out.println(0^1);
+		
+		System.out.println(x^true);
 		
 		
 	}

@@ -14,5 +14,7 @@
 	<classpathentry kind="src" path="020-valid-parentheses"/>
 	<classpathentry kind="src" path="929-unique-email-addresses"/>
 	<classpathentry kind="src" path="760-find-anagram-mappings"/>
+	<classpathentry kind="src" path="832-flipping-an-image"/>
+	<classpathentry kind="src" path="657-robot-return-to-origin"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
