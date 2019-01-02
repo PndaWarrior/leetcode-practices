@@ -1,0 +1,7 @@
+This can be solved by a simple Map.
+
+A and B must have same size, and we know that A[0] must be somewhere in B.
+
+We loop through B to get a map of the integer itself and the index that's in B.
+
+result[0] = map.get(A[0]);
