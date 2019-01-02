@@ -12,5 +12,6 @@
 	<classpathentry kind="src" path="013-roman-to-integer"/>
 	<classpathentry kind="src" path="014-longest-common-prefix"/>
 	<classpathentry kind="src" path="020-valid-parentheses"/>
+	<classpathentry kind="src" path="929-unique-email-addresses"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

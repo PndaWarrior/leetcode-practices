@@ -1,0 +1,6 @@
+Just separate each email in a local part and a rest part.
+
+in the local part, remove everything after "+" sign if it exists.
+In the local part, replace all "." with "" if it exists.
+
+Initilaize a hashset and just the newly converted unique email address into the.  The size of the set is the output.

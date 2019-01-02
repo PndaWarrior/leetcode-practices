@@ -4,11 +4,9 @@ public class Playground {
 	public static void main(String[] args) {
 		
 	
+		String temp = "BLAHBLAH.blah";
 		
-		char b = 'b';
-		Character temp = new Character('b');
-		
-		System.out.println(temp == b);
+		System.out.println(temp.replace(".", ""));
 		
 		
 	}
