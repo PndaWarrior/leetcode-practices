@@ -1,0 +1,6 @@
+Simple algorithm
+When we find a 1, then we know that any adjacent 0 means we need to add 1 to the perimeter, also if the any adjacent side is out of the index range, it also means we need to add 1 to the perimeter.
+
+Note:
+if( x - 1 < 0 || grid[y][x-1] == 0)
+This If statement works because we check whether the adjacent is out of bound, since this is an OR operation, it will return true without checking the out of bound index.

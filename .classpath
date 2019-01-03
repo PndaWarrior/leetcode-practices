@@ -16,5 +16,6 @@
 	<classpathentry kind="src" path="760-find-anagram-mappings"/>
 	<classpathentry kind="src" path="832-flipping-an-image"/>
 	<classpathentry kind="src" path="657-robot-return-to-origin"/>
+	<classpathentry kind="src" path="463-island-perimeter"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
