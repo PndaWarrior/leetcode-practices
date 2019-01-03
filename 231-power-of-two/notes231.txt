@@ -1,0 +1,16 @@
+Two Solution
+
+1. Recursive
+Just divide keep dividing by 2, if we ever see there's a remainder that's bigger than 0, then return false, and if at the end we get 1, then it is power of 2
+
+2. Binary
+All power of twos in binary will have binary of 10.....0
+2 = 10
+4 = 100
+7 = 111
+8 = 1000
+16= 10000
+
+So if we shift the binary right by 1 bit and then left by 1 bit, power of twos will have the exact same binary, so we just write a while loop to keep checking if there's any occurrence where after we shift right and then left, the number is different.
+
+ 

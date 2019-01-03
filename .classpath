@@ -19,5 +19,6 @@
 	<classpathentry kind="src" path="463-island-perimeter"/>
 	<classpathentry kind="src" path="448-find-all-numbers-disappeared-in-an-array"/>
 	<classpathentry kind="src" path="387-first-unique-character-in-a-string"/>
+	<classpathentry kind="src" path="231-power-of-two"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
