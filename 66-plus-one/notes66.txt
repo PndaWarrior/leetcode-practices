@@ -1,0 +1,3 @@
+Just use a carry to remember whether you need to continue to add next.
+
+Remember that it's possible at the end of the calculation, we need to create more space for one more carry, such as for the case [9], since the output needs to be [1,0]
