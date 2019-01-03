@@ -1,0 +1,12 @@
+IN java strings are immutable, in order to modify the string, we need to use a StringBuilder instead.
+
+The rest is simple, just have two iterator one from the front and one from the back, have the two iterators move until they see a vowel and then just swap them.
+
+
+
+In the javascript solution,
+We can swap code by using the new ES6 standard, destructing assignments.
+        [array[front], array[back] ] = [array[back], array[front]];
+This allows us to extract data from objects or arrays using a syntax that mimics the constructing of arrays and objects.
+
+Also, we can easily split the string into an array of characters using string.split(""), and then join back the arary into a string by string.join("")

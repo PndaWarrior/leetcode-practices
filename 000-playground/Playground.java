@@ -3,15 +3,13 @@ public class Playground {
 
 	public static void main(String[] args) {
 		
+	String temp = "HELLO";
 	
-		int i = 0;
-		
-		boolean x = true;
-		
-		System.out.println(0^1);
-		
-		System.out.println(x^true);
-		
+	StringBuilder b = new StringBuilder(temp);
+	
+	b.setCharAt(2, 'X');
+	
+	System.out.println(b);
 		
 	}
 

@@ -21,4 +21,11 @@ class Solution231 {
      
         return true;
     }
+    
+    public boolean isPowerOfTwoConvert(int n) {
+    	String convert = Integer.toString(n, 2);
+    	
+    	return convert.matches("^10*$");
+    	
+    }
 }

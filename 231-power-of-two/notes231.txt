@@ -13,4 +13,4 @@ All power of twos in binary will have binary of 10.....0
 
 So if we shift the binary right by 1 bit and then left by 1 bit, power of twos will have the exact same binary, so we just write a while loop to keep checking if there's any occurrence where after we shift right and then left, the number is different.
 
- 
+ Another way to do this is by utilizing the java built in function, we can convert the binary into a string, and then check if it matches the pattern 1 followed by n number of 0s
