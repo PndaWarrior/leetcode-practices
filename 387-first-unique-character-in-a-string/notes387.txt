@@ -1,0 +1,7 @@
+Obviously we need a way to count.
+
+The way I did the count is by using an array, rather than HashMap.  I still have a HashMap to map the character and the index of the first appearence.
+
+I have another array for counting.  I think this will take up more space but it should be faster since opeartion on Arrays are faster than operations on HashMap.
+
+The idea is that, the index of the array is the index of the string character, so if the character appeared once then the corresponding index of the answer array will have 1, else it will have 2.

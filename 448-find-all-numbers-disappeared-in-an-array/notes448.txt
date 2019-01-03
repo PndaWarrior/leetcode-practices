@@ -1,0 +1,5 @@
+Since we have to NOT use any extra space and still perform this under O(n), we will need to use the given input as a way to track number is seen.
+
+The way we can do this is by marking the seen index's value as 0, for example nums[0] = 4, so we mark the 4th element in the array as 0, indicating that this has been seen.
+However, before we mark nums[4] to 0, we need to do the same thing for nums[nums[4]].  So we write a while loop, for each seen numbers for this current iteration.
+After the loop, all the values at the "seen index" will have a value of 0, where the not seen index will have its original value.  So we just loop through the array again and add the index to the answer array for each index value that is bigger than 0
