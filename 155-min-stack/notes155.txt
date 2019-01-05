@@ -1,0 +1,9 @@
+There's a couple of ways to do this.
+
+1. using Java Stack collection
+We can just have two stacks, one is to keep track of the stack, the other to keep track of the min values.
+On the min stack, we only need to push onto the stack if we encounter a new min, and we don't need to worry about any other values that's bigger than the current min.  The reason is we know that stack is first in last out, so we know that if a previous min is at the bottom, and at the top is the current min, then when we pop the top, the next min is definitely at the bottom since all other values are bigger than the previous min.
+
+2. Not using java stack collectoin
+Just create another object ListNode, and mimic the stack operations by using the ListNode.
+The idea is all about the same, except I doin't need another stack, my ListNode object has a nextMin field, where it tracks the address for the next supposed min, so if I pop the current min, I can just assign the min node for the stack as the top.nextMin();

@@ -23,5 +23,6 @@
 	<classpathentry kind="src" path="326-power-of-three"/>
 	<classpathentry kind="src" path="345-reverse-vowels-of-a-string"/>
 	<classpathentry kind="src" path="66-plus-one"/>
+	<classpathentry kind="src" path="155-min-stack"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
