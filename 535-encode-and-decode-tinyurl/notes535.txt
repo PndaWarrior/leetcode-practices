@@ -1,0 +1,31 @@
+The concept to this problem is simple.
+
+We need to create a map of Key and URLs.  We can just use HashMap for this.
+
+When we encode, we generate the key, the new URL is "https://tinyurl.com/" + key;
+when we decode, we get rid of "https://tinyurl.com/" and use the key to get the original URL.
+
+The only thing we need to figure out is HOW to generate this KEY.
+
+There are multiple ways
+1. Simple Counter - start from 0, for each new long url we get, we increment count by 1
+For this case, the key is just the counter
+PRO : Easy to implement
+CON : Easy to predict URL, the key can actually be really large depending on the order of URLs received, limited by the size of Integers (2^31-1)
+
+2. Counter with String - start from 0, for each new long url we get, we increment count by 1
+In this case, the we get the counter, and then translate that into characters between
+"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+To translate it, we just mod the counter by 61
+- Pro and Con same as the Simple counter
+
+3. HashCode - the key is just the LONG URL's hashCode();
+PRO : Easy to implement and the size of the new URL is not relative to the order of URL received
+CON : Still easy to predict URL and size limited by size of Integers
+
+4. Random Number Generator with Fixed Length Key -
+Same concept as Counter with String, we haver an alphabet string.
+The key is 6 characters that are randomly chosen from the alphabet string.  So using a random number generator, and generate a number from 0 to 61, that will be the first character, repeat this process 6 times to get a Key String.
+If map already contains this Key, we just need to generate a new one.
+PRO : Pretty easy to implement, size of new URL is always 6, the limit of the key is (10+26+26)^6, which is much larger, can easily increase the size by adding addition characters to the key
+CON : As URL gets inserted into the MAP, the collision chances goes up, meaning that the algorithm to get random key is gonna run more often as map grows.
