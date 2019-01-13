@@ -25,5 +25,6 @@
 	<classpathentry kind="src" path="66-plus-one"/>
 	<classpathentry kind="src" path="155-min-stack"/>
 	<classpathentry kind="src" path="535-encode-and-decode-tinyurl"/>
+	<classpathentry kind="src" path="280-wiggle-sort"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

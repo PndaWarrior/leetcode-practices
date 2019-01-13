@@ -1,0 +1,10 @@
+The first thing that came to mind is to simply sort the array and then pass through the array again to swap the bigger one to the odd numbers.
+
+Then I realize it's not necessary at all, we just need to pass through the array once.
+We simply have a toggle that tells us that at our current step, should the smaller one be at the front or the bigger one, for example, at index 0, smaller should be at the front, but for index one the bigger should be at the front.
+
+You may ask wouldn't this create a problem in some combination of array? would it be possible that when you swap something, would a later swap mess up the orders? The answer is no.
+
+Consider index 0, 1 and 2
+At index 0, we check if 0 is bigger or index 1 is bigger, and we put the smaller one at index 0 and the bigger one at index 1.
+Then at index 1, we check if index 1 is bigger or index 2 is bigger, then we put the bigger one at the front, in this case, index 1 is already bigger than index 0, and for index 2 to be swapped to index 1, then index 2 must be bigger than index 1 which is also bigger than index 0, so we will never run into an issue.
