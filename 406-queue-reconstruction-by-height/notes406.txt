@@ -1,0 +1,13 @@
+The pattern to solve this problem needs some thoughts but after you figure it out it's pretty simple.
+
+The thing is that we need to sort this first, if we sort this, then the people are lined up by height.
+This then allows us to move each person to the correct spot based on the "position", which is in terms of how many people taller or equal to the same height is in front of this person.
+
+When we sort, by intuition, we may want to put the pesron who's position is smaller in the front (such as [5,0] in frontn of [5,1]).  This seems to makes sense because this would be correct.  However, we run into an issue when we're moving people, because by default I've set it so that if the person's position is 0, that means that person shouldn't move because we're at a sorted position, so no one is taller than him in the front.  This is wrong though, because for the case of [5,0], [5,1], we would attempt to move [5,1] back 1, if we don't then we have to check to see if the index in front of [5,1] is taller, and vise versa for [5,2].
+
+To solve this, we simply reversse the order when we sort, so that person with higher position of same height goes to the front, that way when we start moving people, they move to the proper spot depending on their position.
+
+Then we just need to simply start from the back, if we see someone's position is not 0, then we move that person back the number of spots based on the position.
+
+[4, 4] ,[5, 2] ,[5, 0] ,[6, 1] ,[7, 1] ,[7, 0]
+Remember we need to move from the back, because for example, if we move from the front, we need to move [4,4] back 4 spaces, but then we have to check [5,2], so we can't move the index.  If we move from the back, then we just move [7,1] back 1 space, and then we can forget about that index because we know for a fact that [7,0] should've been in front of [7,1].  
