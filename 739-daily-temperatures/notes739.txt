@@ -1,0 +1,16 @@
+The way we need to think about this problem is to understand that what information is really necessary here.
+
+[89,62,70,58,47,47,46,76,100,70]
+
+In this situation, when we're looking at index 0, 89, do we care there's something like a 62, 70, 58, or so on at all?  We only care about number 100, and we don't care about 70 either.
+
+Look at another example, at index 5, 47, it doesn't care about 46, it just cares about 76, and the 47 before it doesn't care about 46 either, it only cares about 76 at index 7.
+
+Given this, we can simply say that this should be achievable with a stack, where we just remove unnecessary information by popping, and we only need to store the index, so we at the index where we found a bigger temperature, we can stop popping and calculate out the difference index.
+
+
+The solution is simple, we create a stack and start from the back, if the stack is empty then we know for sure there's no temperate greater than the current temperature so we can simply set  the answer[i] to 0.  Then we push the current i onto our stack, this is so later we can calculate the moves.
+
+We write a while loop, so if the stack's top value (T[stack.peek()]) is smaller than or equal to the current T[i], we simply pop because we have no use for it anymore.
+
+If the while loop reaches a value that's bigger than current T[i] then the days difference is just i - stack.peek().  If stack is empty then just set answer[i] to 0
