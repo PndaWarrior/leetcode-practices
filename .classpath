@@ -28,5 +28,6 @@
 	<classpathentry kind="src" path="280-wiggle-sort"/>
 	<classpathentry kind="src" path="406-queue-reconstruction-by-height"/>
 	<classpathentry kind="src" path="739-daily-temperatures"/>
+	<classpathentry kind="src" path="22-generate-parentheses"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

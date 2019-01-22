@@ -1,0 +1,38 @@
+By intuition, we should solve this by recursion.
+
+This is obvious that it can be solved by recursion when we realize let's say for the case of n = 3
+
+For a case where an open bracket is placed down
+"("   The inner part can be solved generating parentheses where n = 2   ")"
+Which is just ( ()() ) and ( (()) )
+
+For when two open bracket is place down
+"((" the inner part can be solved by generating parentheses where n = 1, and the right part is n = 1 still
+which is ( () )()
+
+
+However, even though we can figure out that we need to use recursion we still need to know what exactly is the pattern.
+In recursion, think about the 3 things we need, The Choice, The Constraints, The Goal.
+
+The choice,
+to put down a Left Bracket or a Right Bracket,
+
+The Constraints,
+we can only put down a left bracket if we still have any available left bracket
+We can only put down a right bracket if there's already a left bracket down and still have available right brackets
+
+The Goal,
+We need to keep going until there are no more left bracket to be put down and no more right bracket to be put down.
+
+
+In order to do this recursion, we must pass in the number of left brackets left, the number of right brackets left, and the current String so we can store the result into a list when we're done.
+
+
+When do I put a left bracket down?
+After looking into the different possibilities, we know for a fact that as long as I have left brackets left, then we can put a left bracket down.
+
+When do I put a right bracket down?
+Number of Right Brackets left must not be 0, and a left bracket must already been put down.  This can be calculated simply by checking if number of right brackets left is bigger than number of left brackets left.
+
+When do we know we finished?
+When left brakcets left = 0 and right brakcets left = 0. we know we've arrived at the answer, so we can add the results into the answer.
