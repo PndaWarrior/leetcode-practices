@@ -1,0 +1,28 @@
+We need to solve this problem by using Trie.
+
+We can solve it using brute force so not going to go into it.
+
+- How do we know that we can use Trie?  This problem fulfils the following condition.
+Trie is good at taking care of data structures that are stringing things, and integers are just 32 bits stringed to each other.
+The fact that we need to find the Maximum XOR between two number is perfect for trie, because we know that, if we want to maximize the XOR of two numbers we just need the two numbers have differing bits.
+
+
+Once we establish the solution, the algorithm is quite simple.
+Think of the Trie as a dictionary in our case.  Let's say the Trie has two numbers already, and we have a third number and we need to find which number in the Trie produces the biggest sum with our third numbers.
+
+Consider A: 1111 and Consider B: 0111
+The third number C is 1111
+
+W know for a fact that, XOR of 1 and 0 produces 1, XOR of 1 and 1 produces 0.  In our case, A ^ C = 0000 and B ^ C = 1000
+So how do we find B in our Trie? Well we just check whether the opposite of our current bit exists, if it does then all numbers that's opposite of current bit is a candidate for the Maximum partner.  However, if the opposite does not exist, then we know for a fact that the maximum partner must have the same bit as the current bit.
+
+Going from this logic, we can easily find the maximum partner, but looking to see if the opposite of current bit exists, if it does, then there's a number that exists in the Trie which contains the opposite of current bit.
+
+When we check the bits, we have to go from Most significant digits because we want to find Max, we don't care if the second bit is opposite if the first bit is NOT opposite, the first bit being opposite will have a greater effect on the result than the second bit.
+
+Now that we established the logic to finding the Maximum pair, then the solution is simple.
+We keep track of a sum number, when we're looking for the Maximum pair, if we find that opposite of our current bit exists, we can safely add the number 1 to the current bit of our sum, if the opposite of our current bit does not exist, then we know the maximum pair must have the same bit at the current bit so we can add a 0 to our current bit of our sum (or just not do anything since we don't need to add 0 to 0 in the bit)
+
+Then we just compare the current sum to the max value, which ever is bigger than we store the value.  This solution is O(2n). because we first create the Trie dictionary then loop through all the numbers again to find the maximum XOR.
+
+However, both can be done in a single loop, since if we already inserted a, when we try to insert b and check for the maximum pair, it will check a and b pair.

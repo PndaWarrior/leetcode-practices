@@ -16,11 +16,10 @@ class Solution22 {
     public void loadValidParenthesis(int numLBracket, int numRBracket, String currentString) {
         
         if(numLBracket > 0 ) {
-            
             loadValidParenthesis(numLBracket-1, numRBracket, currentString + "(");
-            
 
-        }            
+        }
+        
         if (numRBracket > 0 && numRBracket > numLBracket){
               loadValidParenthesis(numLBracket, numRBracket-1, currentString + ")");  
         }
@@ -28,7 +27,6 @@ class Solution22 {
         if (numLBracket == 0 && numRBracket == 0){
             answer.add(currentString);
         }
-        
         
     }
     
