@@ -30,5 +30,6 @@
 	<classpathentry kind="src" path="739-daily-temperatures"/>
 	<classpathentry kind="src" path="22-generate-parentheses"/>
 	<classpathentry kind="src" path="421-maximum-XOR-of-two-numbers-in-an-array"/>
+	<classpathentry kind="src" path="173-binary-search-tree-iterator"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

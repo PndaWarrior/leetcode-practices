@@ -1,0 +1,41 @@
+The solution is simple but it requires deep understanding how binary search trees work.
+
+Binary search trees is a tree where
+The left subtree of a node contains only nodes with keys lesser than the node’s key.
+The right subtree of a node contains only nodes with keys greater than the node’s key.
+The left and right subtree each must also be a binary search tree.
+
+This means, all nodes to the left are smaller than the current node, all nodes to the right are bigger than the current node, and all subtrees are also a binary search tree.
+
+The solution requires us to use only O(h) memory and average of O(1) run time.
+
+
+To do this, we need to think about how we are going to perform the action to find the next minimum.
+Intuitively, we should be able to use a stack or a queue to just store up the minimum in order that we found.
+we could probably scan all the nodes and store them in a queue, then we can just simply call next on constant time to find the minimum.  But this require O(n) memory space.
+
+To achieve O(h) memory space I must use a stack, and push only things that I need and pop out things that I don't need.
+
+
+Example:
+                      8
+            4                   9
+      2            6
+        3       5
+
+
+In a binary search tree, the left most node must be the smallest of all, which in our case is number 2.
+The second smallest would be the right node of number 2.
+
+From this we can deduct a couple rules.
+
+- All left node has a possibility to be the next smallest node, and the current smallest is the one where is the left most.
+When we return a node, we need to remove it from our tree so it can no longer be considered as a minimum, so we will null it.
+- The next smallest node has to be the right node of the current left node, if that doesn't exist then the parent is simply the next smallest node.
+- This is true for all binary search tree, since all sub trees are also binary search tree so we can assume that this logic can be used no matter which node is the root node.
+
+This is how we come up with the solution.
+When the class gets initialized, we create a stack and push the root node onto it.
+Whenever someone calls next(), we need to loop through the entire tree from the top node of the stack, and we push each item onto the stack, when we reach a left most node we know that's the current smallest.  This works as we proved it above.
+However, the tricky part is next, we know what the current smallest is but we need to check if that current smallest node has a right node, because the subtree of the right node is smaller than the parent of the current min node, so we push the right node onto the stack so that next time when someone calls next(), it will peek at the top of the stack, and loop through from there to find the left most node again.
+If there's no right node, then it's simple since we already pushed the top node onto the stack, so when we pop the current smallest node, the next smallest node is simply the node at the top.
