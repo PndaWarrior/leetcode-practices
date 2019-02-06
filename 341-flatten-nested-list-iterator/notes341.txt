@@ -1,0 +1,10 @@
+These kind of questions, where we need to get next items, like in 173 where we need to get the next minimum, can all be resolved using queue.
+
+The easiest and most straightforward solution is always on init, loop through the entire collection and put them in a queue.
+
+Anohter way to do this is by using a stack, where at first we push all the item on the list onto the stack.
+
+Then when we call next, if we encounter an integer, simple pop the stack and return the integer.
+if we encounter a list, then we need to call another function to recursively push the list onto the stack.
+
+This can be done but I didn't write out the solution, since it probably will not be good for speed performance and memory space is not that optimal either.
