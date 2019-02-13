@@ -1,0 +1,16 @@
+The idea is simple, we have 5 rules,
+1, live now but dies
+2, live now and live
+3, live now but dies
+4, dead now but lives
+5, dead now and dead
+
+We just need to count the neighbors, and then apply the rules.
+
+Intuitively, we can store the state in a list or a map or another 2d array.  However this prevents us from solving this in place.
+
+In order to solve this in place, our original 2D array need to keep track of the old state and the intermediate state, and then apply the new state.
+
+For example, a live cell is 1, but a live cell that's going to die we can indicate it as 2, so when we do the counting, we can also count a neighbor as living if it has value of 2.
+
+Once all the intermediate states are resolved, we can just loop through the array again and simply change the values based on the intermediate state.
