@@ -1,0 +1,35 @@
+The solution concept is not that difficult as long as you understand priority queues.
+
+Priority queues are queues that are based on mean heaps and that the top of the heap is always the item with highest priority.
+
+In our case, what's needed as priority?  We have an array of rooms that needs to be allocated to meeting rooms, when a meeting room is opened up, we need to free up it's space and allocate another meeting to it.  This is where the priority queue comes in handy.
+
+Our priority queue will keep track of the end time of a meeting, where the top element is the next meeting that's closest to end, so when the start time of the next meeting is after the end time of the top element, then we can simply remove the top element and add the next meeting into the queue.
+
+We need to first sort the intervals by their start time.  The idea is that, we don't need to allocate a meeting that's in the afternoon right now as we are more worried about the meeting that's in the morning.  So we allocate meetings in order of their start time.
+
+We check if the next meeting has a start time after the next meeting room to open up, if so, then we remove the meeting from the priority queue and insert the next meeting based on the end time into the queue.  If not, then we simply add the next meeting into the queue.
+
+At the end of the day, we will have a priority queue of meetings, since we don't remove items from before unless it's because the room has freed up, so we can be sure that the size of the end result queue is the number of meeting rooms required.
+
+--------------------------------------------------------------------------------------------------------------
+The concept of the second problem needs some thoughts.
+
+In our case, what we really need to worry about it, when a meeting room is occupied, we need another room, and when a meeting room that was occupied has freed up, then we can allocate the next meeting to that rooms
+
+The most important information here is just, has a room opened up?
+Imagine the below scenario
+(1,10) (3,5) (6, 11) (12, 20)
+
+We sort the start time and the end time separately. So we have
+
+1   3   6   12
+5   10  11  20
+
+We keep two pointers, at the beginning, since the start time is smaller than the meeting that will end next ( 1 < 5), so we allocate a room.  Room = 1 now
+
+Next we check the second meetings start time, the second meeting starts at 3 but the current meeting ends at 5, so we allocate another room.  Room = 2 now.
+
+Now at the third meeting's start time, which starts at 6, we see that the first meeting is 5, so the first meeting has now ended,  we simply move the second pointer to point to the next meeting that will end, which is at 10.
+
+At the lsast meeting start time, which starts at 12, we see that the next meeting to end is at 10 so it has already ended now, we simply move the second pointer next again.

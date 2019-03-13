@@ -33,5 +33,7 @@
 	<classpathentry kind="src" path="173-binary-search-tree-iterator"/>
 	<classpathentry kind="src" path="341-flatten-nested-list-iterator"/>
 	<classpathentry kind="src" path="289-game-of-life"/>
+	<classpathentry kind="src" path="253-meeting-rooms-ii"/>
+	<classpathentry kind="src" path="560-subarray-sum-equals-k"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

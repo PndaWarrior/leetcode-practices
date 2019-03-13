@@ -1,0 +1,27 @@
+The solution is easy if you have an understanding of how sum of arrays and subarrays of integers work.
+
+Let's talk about the brute force solution.
+We have two for loops, one start, and one end, and we have a cumulative sum value.
+For every subarray, we check if the sum is k, if so count++.
+Complexity O(n^2)
+
+
+Let's talk about how we would solve it by math's perspective.
+Let's consider the following array
+[a b c d e]
+
+If we want to get the sum of subarray [a,b] and subarray [c,d] in brute force, it will require us 2 looping operations (one adding from a to b, and one adding from c to d).
+But if we apply some math logic, we have a loop that will give us a cumulative sum of subarray from [a,b,c,d], which means if we keep track of [a,b] when we ran into it, we could simply calculate out [c,d] if we subtract [a,b] from [a,b,c,d]
+
+So in essence, if [c,d] = k, then we get k if we calculate out [a,b,c,d] - [a,b].  And this can be done by just one loop.
+
+This concept tells us that, for any two sum of subarrays, if their difference is k, then the subarray between the two subarray is definitely one with sum of k.
+
+All we need to do is keep a hashmap of all the sums we found, so when we loop through the array, if (current sum - k) can be found in the map, then there exists at least 1 subarray between the current index to a previous index that has a subarray sum of k.
+
+However, there's a small trick to this solution.  Consider the case [0,0,c,d,e].
+We know that [c,d] = k.  So if we just loop through the array once, we are going to get a case where [0,0,c,d] - k = 0, so we add a count to the solution.  However, that's not correct because technically, [c,d] is a solution, so is [0,c,d], and so is [0,0,c,d].
+
+Remember we say that for ANY two subarrays, if their difference is k, then the subarray between the two subarray is definitely one with sum of k.  We have to keep track in our map, that if we see the same cumulative sum more than once, then later when we perform a check to see if map contains current sum - k, we need to include all the subarrays that has (curren sum - k).
+
+In the above case, we see subarray sum of 0 twice, so then when we perform the calculation [0,0,c,d] - k, we get 0, so we have to count both of those cases as well as the case for [c,d].
