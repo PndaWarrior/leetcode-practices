@@ -35,5 +35,7 @@
 	<classpathentry kind="src" path="289-game-of-life"/>
 	<classpathentry kind="src" path="253-meeting-rooms-ii"/>
 	<classpathentry kind="src" path="560-subarray-sum-equals-k"/>
+	<classpathentry kind="src" path="279-perfect-squares"/>
+	<classpathentry kind="src" path="904-fruit-into-baskets"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

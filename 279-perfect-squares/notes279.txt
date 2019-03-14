@@ -1,0 +1,11 @@
+The problem at hand is not difficult.
+
+Because we need to find the least amount of perfect squres that sumbs up to n.  We can think of the problem like this.
+If n = 12;
+The solution is 3, 4 + 4 + 4;
+
+This can also be thought of as, 1 + solution of 12-4.  Then we turn this into a dymaic programming problem.
+
+We write a function that takes in a number to try and find solution for n, then recursively call for all possible combinations of perfect sqaures and find the minimum one.  Meaning for n = 12, it's possible that 9 is part of the possible solution, or 4 is part of the possible solution so we have to check all posibilities.
+
+The problem is that when we get to larger number, there are way too many combinations to check.  To solve this, we keep an array of int, where we store the calculated numbers.  We pass this array along with n in the recursive function, so if n is already found, then we simply return stored value for n so it doesn't need to calculate again.

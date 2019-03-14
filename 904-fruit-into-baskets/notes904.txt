@@ -1,0 +1,13 @@
+We need to imagine the trees in an array.  Each number in the array represents one type of fruit.
+
+Consider
+[ 1 2 1 2 1 2 3 1 2]
+
+We have 3 type of fruit.  Obviously we need 2 variables, one for the start point and one for the end point.
+Then we need a way to keep track of how many fruites have we encountered so far because we need to stop if we hit 3.
+
+Brute force is simple, check every start point possible, and move the end points next to see whether we exceed count of 2, if so stop then start over from the next start point.  This is O(n^2).
+
+Here's the thing though, using the above example, when we get to the tree with number 3, we know for a fact how many 1 and 2 we have encountered, we can simply keep moving the start point next till we get to a point either 1 or 2 is gone because any point starting between index 0 and index 6 are going to end at index 6 and going to be shorter than start point of 0.
+
+All we need to do is keep a hashmap of the fruit encountered as well as how many we encountered.  Then all we need to do is when we have a count of 3 in the fruit's hashmap, we move the start point next until we get to a point where one of the hashmap has an item with count 0, at the point we just remove that item from the hashmap.  Then our startpoint is the next index.
