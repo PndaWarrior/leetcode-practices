@@ -37,5 +37,8 @@
 	<classpathentry kind="src" path="560-subarray-sum-equals-k"/>
 	<classpathentry kind="src" path="279-perfect-squares"/>
 	<classpathentry kind="src" path="904-fruit-into-baskets"/>
+	<classpathentry kind="src" path="17-letter-combinations-of-a-phone-number"/>
+	<classpathentry kind="src" path="200-numbernof-islands"/>
+	<classpathentry kind="src" path="240-search-a-2D-matrix-II"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,0 +1,11 @@
+Backtracking is a form of dynamic programming.  It solves problems recursively by trying to build a solution incrementally, one piece at a time.  Backtracking considers searching every possible combination to solve the computational problem.
+
+In many cases, backtracking needs optimizing through memoization because there are huge number of recursive calls made for same set of input values again and again.
+
+Memoization is a technique where we remember and reuse a solution that has already been calculated for a specific set of input values.
+
+In our case, we need to build out all of the possible solutions of the digits, no matter what kind of digit it is, so backtracking is perfect for this.
+
+For each digit in the string, we need to consider all the combination of letters so we first store the digit to letters mapping in a hashmap.
+
+Then we simply write a recursive function, where we pass in the previous stored combination and then we append all the letters that matches the next digit to the previous stored combination.

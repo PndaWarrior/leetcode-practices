@@ -1,0 +1,27 @@
+Right away, since we're doing a search and this is a sorted 2D array, that means we must be able to perform some sort of binary search method.
+
+In a normal binary search of a sorted array, [1 ,3, 5, 6, 7, 10]
+
+If we want to find the number 3, we can simply think of it as segmented into two problems, one with first half of the array, and one with the second half of the array, since 3 is smaller than the smallest number of the second half array, we know 3 can only be in the first of the array.  Then we try to find 3 using the same function but this time only through [1,3,5].
+
+For a 2D array
+[
+  [1,   4,  7, 11, 15],
+  [2,   5,  8, 12, 19],
+  [3,   6,  9, 16, 22],
+  [10, 13, 14, 17, 24],
+  [18, 21, 23, 26, 30]
+]
+
+Same idea can be applied here, we can think of our matrix to be in 4 quadrant, and we can check whether or not our target falls between the smallest (top left number) and the biggest (bottom right number).  If so, then we try to solve the same sub problem.
+
+This time complexity is O(nlogn)
+
+However, let's think of this problem differently.
+We know that the rows and columns are all sorted.  Can we simply traverse the matrix in a way that, we only move the necessary movements.  For example, if we try to find the number 5, we can loop through first row, when we see 4 and then we see 7, we know we need to move down instead of keep going right, and we don't have to check any other columns to the right because all of those numbers are bigger than 7.
+
+This is possible, but if we start from the top left number, it's difficult to code because we would need to perform checks to know whether we should move down or move right when we found a bigger number, and vice versa when we found a smaller number.
+
+The idea can be simply solved if we start form the bottom left, where we know for a fact if the bottom left number is smaller than the target, then we need to move right, because all upper numbers are smaller than my current number. We know that if the bottom left number is bigger than the target, then we need to move up because all numbers in that row is bigger than the target.
+
+This time complexity is O(n+m), because when we move up a row, or move right a column, we're essentially eliminating all the numbers in that row or column, and we can only move up n times and move right m times.
