@@ -5,7 +5,6 @@
 	<classpathentry kind="src" path="001-two-sum"/>
 	<classpathentry kind="src" path="002-add-two-numbers"/>
 	<classpathentry kind="src" path="003-longest-substirng-without-repeating-characters"/>
-	<classpathentry kind="src" path="004-median-of-two-sorted-arrays"/>
 	<classpathentry kind="src" path="005-longest-palindromic-substring"/>
 	<classpathentry kind="src" path="007-reverse-integer"/>
 	<classpathentry kind="src" path="009-palindrome-number"/>
@@ -40,5 +39,7 @@
 	<classpathentry kind="src" path="17-letter-combinations-of-a-phone-number"/>
 	<classpathentry kind="src" path="200-numbernof-islands"/>
 	<classpathentry kind="src" path="240-search-a-2D-matrix-II"/>
+	<classpathentry kind="src" path="388-longest-absolute-file-path"/>
+	<classpathentry kind="src" path="228-summary-ranges"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,0 +1,5 @@
+The idea is simple.
+
+Keep track of the starting point, if we encounter a value that has a difference bigger than 1 with the previous value, then we know there's a break in range.
+
+Just need to implement that case.

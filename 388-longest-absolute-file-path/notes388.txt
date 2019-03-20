@@ -1,0 +1,10 @@
+By intuition, we would create a tree, and for each node, we will store the string as well as the current length of the directory levels into the tree node.  After we insert all the nodes, we will then search all the child leafs to find the max length.
+
+
+However, this is too complicated for solving this problem.
+
+In essence, we only need to know the max length, so we just need some mechanism to store the largest length every time we get to a file.
+
+Also, due to the way that file paths work, when we get to a file, that's the end of that tree, since we're going to keep comparing every file and it's total length, we don't need to keep track of all the nodes.
+
+We know that the number of tabs will represent the sub level that the file or the sub directory resides.  We simply need to store all the lengths in an array, and for each subdirectory or file, we check it's parent's length then we store the current length in the array.
