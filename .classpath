@@ -2,44 +2,5 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="000-playground"/>
-	<classpathentry kind="src" path="001-two-sum"/>
-	<classpathentry kind="src" path="002-add-two-numbers"/>
-	<classpathentry kind="src" path="003-longest-substirng-without-repeating-characters"/>
-	<classpathentry kind="src" path="005-longest-palindromic-substring"/>
-	<classpathentry kind="src" path="007-reverse-integer"/>
-	<classpathentry kind="src" path="009-palindrome-number"/>
-	<classpathentry kind="src" path="013-roman-to-integer"/>
-	<classpathentry kind="src" path="014-longest-common-prefix"/>
-	<classpathentry kind="src" path="020-valid-parentheses"/>
-	<classpathentry kind="src" path="929-unique-email-addresses"/>
-	<classpathentry kind="src" path="760-find-anagram-mappings"/>
-	<classpathentry kind="src" path="832-flipping-an-image"/>
-	<classpathentry kind="src" path="657-robot-return-to-origin"/>
-	<classpathentry kind="src" path="463-island-perimeter"/>
-	<classpathentry kind="src" path="448-find-all-numbers-disappeared-in-an-array"/>
-	<classpathentry kind="src" path="387-first-unique-character-in-a-string"/>
-	<classpathentry kind="src" path="231-power-of-two"/>
-	<classpathentry kind="src" path="326-power-of-three"/>
-	<classpathentry kind="src" path="345-reverse-vowels-of-a-string"/>
-	<classpathentry kind="src" path="66-plus-one"/>
-	<classpathentry kind="src" path="155-min-stack"/>
-	<classpathentry kind="src" path="535-encode-and-decode-tinyurl"/>
-	<classpathentry kind="src" path="280-wiggle-sort"/>
-	<classpathentry kind="src" path="406-queue-reconstruction-by-height"/>
-	<classpathentry kind="src" path="739-daily-temperatures"/>
-	<classpathentry kind="src" path="22-generate-parentheses"/>
-	<classpathentry kind="src" path="421-maximum-XOR-of-two-numbers-in-an-array"/>
-	<classpathentry kind="src" path="173-binary-search-tree-iterator"/>
-	<classpathentry kind="src" path="341-flatten-nested-list-iterator"/>
-	<classpathentry kind="src" path="289-game-of-life"/>
-	<classpathentry kind="src" path="253-meeting-rooms-ii"/>
-	<classpathentry kind="src" path="560-subarray-sum-equals-k"/>
-	<classpathentry kind="src" path="279-perfect-squares"/>
-	<classpathentry kind="src" path="904-fruit-into-baskets"/>
-	<classpathentry kind="src" path="17-letter-combinations-of-a-phone-number"/>
-	<classpathentry kind="src" path="200-numbernof-islands"/>
-	<classpathentry kind="src" path="240-search-a-2D-matrix-II"/>
-	<classpathentry kind="src" path="388-longest-absolute-file-path"/>
-	<classpathentry kind="src" path="228-summary-ranges"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
