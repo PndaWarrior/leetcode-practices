@@ -2,5 +2,52 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="000-playground"/>
+	<classpathentry excluding="004-median-of-two-sorted-arrays/|146-LRU-cache/|42-trapping-rain-water/|004-median-of-two-sorted-arrays/|146-LRU-cache/|42-trapping-rain-water/|305-number-of-islands-ii/|305-number-of-islands-ii/" kind="src" path="hard-questions"/>
+	<classpathentry excluding="001-two-sum/|001-two-sum/|002-add-two-numbers/|003-longest-substirng-without-repeating-characters/|005-longest-palindromic-substring/|007-reverse-integer/|009-palindrome-number/|013-roman-to-integer/|014-longest-common-prefix/|020-valid-parentheses/|155-min-stack/|17-letter-combinations-of-a-phone-number/|173-binary-search-tree-iterator/|200-numbernof-islands/|22-generate-parentheses/|228-summary-ranges/|231-power-of-two/|240-search-a-2D-matrix-II/|253-meeting-rooms-ii/|279-perfect-squares/|280-wiggle-sort/|289-game-of-life/|326-power-of-three/|341-flatten-nested-list-iterator/|345-reverse-vowels-of-a-string/|387-first-unique-character-in-a-string/|388-longest-absolute-file-path/|406-queue-reconstruction-by-height/|421-maximum-XOR-of-two-numbers-in-an-array/|448-find-all-numbers-disappeared-in-an-array/|463-island-perimeter/|535-encode-and-decode-tinyurl/|560-subarray-sum-equals-k/|657-robot-return-to-origin/|66-plus-one/|739-daily-temperatures/|760-find-anagram-mappings/|832-flipping-an-image/|904-fruit-into-baskets/|929-unique-email-addresses/|002-add-two-numbers/|003-longest-substirng-without-repeating-characters/|005-longest-palindromic-substring/|007-reverse-integer/|009-palindrome-number/|013-roman-to-integer/|014-longest-common-prefix/|020-valid-parentheses/|155-min-stack/|17-letter-combinations-of-a-phone-number/|173-binary-search-tree-iterator/|200-numbernof-islands/|22-generate-parentheses/|228-summary-ranges/|231-power-of-two/|240-search-a-2D-matrix-II/|253-meeting-rooms-ii/|279-perfect-squares/|280-wiggle-sort/|289-game-of-life/|326-power-of-three/|341-flatten-nested-list-iterator/|345-reverse-vowels-of-a-string/|387-first-unique-character-in-a-string/|388-longest-absolute-file-path/|406-queue-reconstruction-by-height/|421-maximum-XOR-of-two-numbers-in-an-array/|448-find-all-numbers-disappeared-in-an-array/|463-island-perimeter/|535-encode-and-decode-tinyurl/|560-subarray-sum-equals-k/|657-robot-return-to-origin/|66-plus-one/|739-daily-temperatures/|760-find-anagram-mappings/|832-flipping-an-image/|904-fruit-into-baskets/|929-unique-email-addresses/|56-merge-intervals/|56-merge-intervals/|261-graph-valid-tree/|261-graph-valid-tree/" kind="src" path="medium-and-easy"/>
+	<classpathentry kind="src" path="medium-and-easy/001-two-sum"/>
+	<classpathentry kind="src" path="medium-and-easy/002-add-two-numbers"/>
+	<classpathentry kind="src" path="medium-and-easy/003-longest-substirng-without-repeating-characters"/>
+	<classpathentry kind="src" path="medium-and-easy/005-longest-palindromic-substring"/>
+	<classpathentry kind="src" path="medium-and-easy/007-reverse-integer"/>
+	<classpathentry kind="src" path="medium-and-easy/009-palindrome-number"/>
+	<classpathentry kind="src" path="medium-and-easy/013-roman-to-integer"/>
+	<classpathentry kind="src" path="medium-and-easy/014-longest-common-prefix"/>
+	<classpathentry kind="src" path="medium-and-easy/020-valid-parentheses"/>
+	<classpathentry kind="src" path="medium-and-easy/155-min-stack"/>
+	<classpathentry kind="src" path="medium-and-easy/17-letter-combinations-of-a-phone-number"/>
+	<classpathentry kind="src" path="medium-and-easy/173-binary-search-tree-iterator"/>
+	<classpathentry kind="src" path="medium-and-easy/200-numbernof-islands"/>
+	<classpathentry kind="src" path="medium-and-easy/22-generate-parentheses"/>
+	<classpathentry kind="src" path="medium-and-easy/228-summary-ranges"/>
+	<classpathentry kind="src" path="medium-and-easy/231-power-of-two"/>
+	<classpathentry kind="src" path="medium-and-easy/240-search-a-2D-matrix-II"/>
+	<classpathentry kind="src" path="medium-and-easy/253-meeting-rooms-ii"/>
+	<classpathentry kind="src" path="medium-and-easy/279-perfect-squares"/>
+	<classpathentry kind="src" path="medium-and-easy/280-wiggle-sort"/>
+	<classpathentry kind="src" path="medium-and-easy/289-game-of-life"/>
+	<classpathentry kind="src" path="medium-and-easy/326-power-of-three"/>
+	<classpathentry kind="src" path="medium-and-easy/341-flatten-nested-list-iterator"/>
+	<classpathentry kind="src" path="medium-and-easy/345-reverse-vowels-of-a-string"/>
+	<classpathentry kind="src" path="medium-and-easy/387-first-unique-character-in-a-string"/>
+	<classpathentry kind="src" path="medium-and-easy/388-longest-absolute-file-path"/>
+	<classpathentry kind="src" path="medium-and-easy/406-queue-reconstruction-by-height"/>
+	<classpathentry kind="src" path="medium-and-easy/421-maximum-XOR-of-two-numbers-in-an-array"/>
+	<classpathentry kind="src" path="medium-and-easy/448-find-all-numbers-disappeared-in-an-array"/>
+	<classpathentry kind="src" path="medium-and-easy/463-island-perimeter"/>
+	<classpathentry kind="src" path="medium-and-easy/535-encode-and-decode-tinyurl"/>
+	<classpathentry kind="src" path="medium-and-easy/560-subarray-sum-equals-k"/>
+	<classpathentry kind="src" path="medium-and-easy/657-robot-return-to-origin"/>
+	<classpathentry kind="src" path="medium-and-easy/66-plus-one"/>
+	<classpathentry kind="src" path="medium-and-easy/739-daily-temperatures"/>
+	<classpathentry kind="src" path="medium-and-easy/760-find-anagram-mappings"/>
+	<classpathentry kind="src" path="medium-and-easy/832-flipping-an-image"/>
+	<classpathentry kind="src" path="medium-and-easy/904-fruit-into-baskets"/>
+	<classpathentry kind="src" path="medium-and-easy/929-unique-email-addresses"/>
+	<classpathentry kind="src" path="hard-questions/004-median-of-two-sorted-arrays"/>
+	<classpathentry kind="src" path="hard-questions/146-LRU-cache"/>
+	<classpathentry kind="src" path="hard-questions/42-trapping-rain-water"/>
+	<classpathentry kind="src" path="medium-and-easy/56-merge-intervals"/>
+	<classpathentry kind="src" path="hard-questions/305-number-of-islands-ii"/>
+	<classpathentry kind="src" path="medium-and-easy/261-graph-valid-tree"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

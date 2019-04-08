@@ -1,16 +1,13 @@
 This question is a math question.
 https://www.programcreek.com/2012/12/leetcode-median-of-two-sorted-arrays-java/
+https://users.soe.ucsc.edu/~lwang107/?Articles___Median_of_Two_Sorted_Arrays
 
 First we need to understand what exactly is a median.
 
-A median is the Kth number such that, number of items from the left = number of items from the right. 
+A median is the Kth number such that, number of items from the left = number of items from the right.
 
 This means that we can generalize this question into a "find the Kth number from two sorted arrays" where K is just TOTAL/2.
-
-We can solve this by finding the medians of both arrays, if we know that array1 has a smaller median than array2, then we know for a fact that all the items to the left of array1 is smaller than the eventual Kth number.
-
-
-
+Then we apply similar methods as a binary search method, where we divide and discard k/2 items each time we iterate.
 
 First thing we gotta do is that is note there are two cases.
 if total number is even, then Median is the two middle number add together divided by 2, the kth number + the k+1th number /2.
@@ -28,7 +25,7 @@ startpoint2, the two starting points, since we cannot create new array each time
 
 Then we need to figure out the base cases, there are total of 3.
 First of all, if the start point of array 1 is >= than length of array 1, then we know the median is in the second array and is the K + startpoint2 -1 number.
-Why? 
+Why?
 two cases, if array1 has length of 0, K = total/2 which is just length of array2/2
 if array1 has length of a small number, and the startpoint of 1 is larger than that, then in later calculation, we would subtract out the number of items we dropped from array1, so K is total/2-number of items in array1
 
@@ -36,10 +33,9 @@ if K is 1, then we know for a fact that the median has to be the first number of
 
 
 Now that we have the base cases, we need to start simulating how to find the kth number,
-We start by finding the midIndex of both arrays, which is startpoint + k/2 - 1
-(remember, K at this point is the median of the two arrays, which is already divided by 2)
+We start by finding the midIndex of both arrays, which is startpoint + k/2 - 1 (This is because we want to discard half of k numbers each iteration)
 
 Then we find the mid point value of both arrays.
 It is possible that the midpoint value we tried to find is larger than the size of the array, in this case, we know for a fact that we need to drop items from the other array, so we just set the value to be the largest Integer possible for that case.
 
-If midpoint of array1 is smaller than the midpoint of array2, then we can drop all the items from array1 to the left of the midpoint, then tried to find a new Kth number of the two arrays, where Kth = K - k/2 
+If midpoint of array1 is smaller than the midpoint of array2, then we can drop all the items from array1 to the left of the midpoint, then tried to find a new Kth number of the two arrays, where Kth = K - k/2

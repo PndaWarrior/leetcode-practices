@@ -1,0 +1,15 @@
+This is a follow up question to the Number of Islands I question.
+
+When we solved the previous question, we run a breadth first search on islands when we see a land, and we would mark all the seen item so we do not check it again.  however, this operation requires O(n) time
+
+If we applied the exact same solution now each time a new land is formed, this could become O(n^2) time.
+
+The way we solve this question is by utilizing Union Find data strcture.
+
+At the beginning, we initialize the data structure with all indexes' parent points to -1, indicating that this is a union but not a land.
+
+Whenever we create a land, we would increase the number of island count by 1, and set the parent pointer for the index to itself indicating that this is now a union and also a land.
+
+Then we check the surrounding indexes to see whether it's a land, if it is then we need to union the current index to the land and we decrease the number of islands by 1.
+
+Once we have done that for all 4 sides, we know how many island there is for current iteration also that all the adjacent lands have been unioned into one island.

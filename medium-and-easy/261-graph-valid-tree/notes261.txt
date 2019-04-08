@@ -1,0 +1,10 @@
+This can be done by Union Find.
+
+The idea of a valid tree is that, all nodes are connected and there are no loops.
+
+We can easily determine whether all nodes were connected by keeping track of how many unions we have in the end.  At the beginning we have a union find data structure that treats all nodes as individual unions to start, which means we have n unions at the beginning.
+
+Each time we union two items, we would lose a union, so in the end we should only have 1 union left.
+
+
+The way union find works for this solution is that, we can determine whether or not two indexes are in the same union by finding the root parent of each.  If they have different root parent, this means that the two items are in different union so we union them.  However, if they are already in an union and there's another edge, this must mean there was a loop.

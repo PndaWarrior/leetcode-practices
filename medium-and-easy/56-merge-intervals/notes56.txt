@@ -1,0 +1,7 @@
+This is similar to the # of max meeting rooms required question.
+
+We know that two intervals need to be merged if the end time of one is bigger than or equal to the start time of the other.
+
+We can simply sort the array of intervals by their start time, and then for each item check if the start time is smaller than the last item in the newly merged intervals array.
+
+The only special case we need to be careful about is that, it's possible where a merged interval can have and end time that's larger than the current interval, so we have to account for the new merged interval to take in the bigger number of the merged interval and the current interval's end time.
