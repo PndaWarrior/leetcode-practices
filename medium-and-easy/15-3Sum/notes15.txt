@@ -1,0 +1,29 @@
+Brute force:
+
+int i = 0 -> length -2
+int j = i+1 -> length - 1
+int k = j+1 -> length
+
+search all combination to see if we get number 0, if we do then add to answer.
+
+
+However, we can solve this with similar method as how we solved two sum.
+Since the outer loop for i can be considered as constant when we are searching for j and k.
+
+We set target = 0 - nums[i];
+
+Then we're just trying to find Two sum of j and k where nums[j] + nums[k] = target.
+
+Basic idea is first, sort the arrays
+have two pointers one moving from the left and one moving from the right.
+if nums[j] + nums[k] > target, then we move the pointer from the right, so the next iteration nums[j]+nums[k] will be smaller.
+Vice versa if it's bigger.
+
+If it's the same then add the combination to the answer.
+
+
+Be careful of the edge cases.
+1. If length < 3, simply return empty
+2. If we encounter nums[i] and solved the combination for nums[i], then if any subsequent numbers nums[i+1] if it's the same as nums[i] we can disregard because we have already checked the combination for that.
+3. When we get an answer for target, we need to keep moving the pointers, since there may be more combinations.
+4. however, we would need to check whether the nums[l] and nums[l-1] is duplicate, because again if it's duplicate then we have already considered the case.  We would also need to check for nums[r] and nums[r+1].

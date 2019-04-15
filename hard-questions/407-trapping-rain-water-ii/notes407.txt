@@ -1,0 +1,13 @@
+The trick to this question is that we need to take what we learned form Trapping Rain Water 1 and apply it.
+
+In Trapping Rain Water 1, we learned that we can fill water starting from the two outer edge, and slowly fill in water from the lowest edge, and then move in.
+
+In number 2, we have to think about the outer edge are all of the heights in the first row, first column, last row, annd last column.
+
+Then we apply the same logic, starting from the lowest edge because that's going to dictate the highest point where the water is going to be at for the outer edge.  Starting from that point, we move in as we iterate through the grid.
+
+The trick to this problem is instead of scanning all of the outer edge each time when we need to find the smaller height, we use a heap.  Heap is a priority queue that will order our items so that the smallest (or biggest depends on your configuration) will always be at the top.  Top item access is O(1), but retrieve and insert operations are O(logn).
+
+First we initialize the outer edge, start from the lowest point in the outer edge, and slowly fill water inwards.  When we see a taller edge than the current edge, then there's no way we can fill in water, so we simply pop the top and add the new edge into the queue.  When we see a shorter edge, then we know that edge can only fill up water to the point of the outer edge we are on.  We add the answer with the unit of water, remove the outer edge, and insert the new edge with the same height as the previous edge because we know that's still going to be used as our base to calculate the next index.
+
+Another trick to this is to know that we need to perform this operation for multiple item becuase it's possible we need to check at least 3 sides when making a movement.  

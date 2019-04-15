@@ -1,0 +1,15 @@
+What's a median?  A median is so that the numbers to the left and the numbers to the right of a sorted array must be the same for that number to be called a medium.
+
+
+In our case, we have a stream of data coming in.
+
+First solution : insert into the array at O(1) complexity but when we need to find median, sort first then return the middle number.  Operation non find median is O(nlogn);
+
+Second solution : insertion sort, each time we insert we also sort, so each insert is Log(n) + n operation, because Log(n) finds the location where we need to insert, then n operation to move all the items to the right one spot.  find medium = O(1);
+
+
+However, for us to find a medium, we really don't care if the array is sorted, we only care that the left side and the right side must have the same size.
+
+We can instead think of splitting that huge data stream of data into two parts, a left array, and right array.  I only need to know what's the biggest number of my left array, and what's the smallest number of the right array, and the size of them to be able to keep the medium balanced.  I need to know the number because if I don't have a number in the medium, I need to add the two together and divide by 2.
+
+We can achieve this by keeping two heaps.  If we have two heaps, one is a minHeap, which keeps all the larger numbres, and one maxHeap, which keeps all smaller numbers.  When I perform insert, I know the size of the right side and the left side, as well as the two numbers I need to perform calculation.
