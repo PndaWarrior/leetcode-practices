@@ -1,0 +1,9 @@
+Brute force, compare each of the first item and return the smallest, iterate until all of the items are cleared out.
+O(kn)
+
+Second brute force, merge all into one list and sort, O(n) + O(nlogn);
+
+Using heap, I just need to store all of the first items in the list since the list themselves are already sorted.
+Keep iterating until the heap is gone, and since it's a min heap i always get the smallest number if I poll.
+
+O(nlogk), insert and remove takes logk time, since there are n number of nodes so it's O(nlogk)

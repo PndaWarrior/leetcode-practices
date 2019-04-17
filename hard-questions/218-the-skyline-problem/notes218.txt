@@ -1,0 +1,11 @@
+The solution to this problem is a combination of scanning line and heap.
+
+Imagine that we have n number of buildings on a x-axis, we have a start point of a building and a end point of a building.  For each giving point in time (start or end), we need to check what's the tallest building at that time and whether or not that height is different from the previous answer.
+
+We just need to break up the buildings in two points in time since start and end of a building are different but they have the same height.
+
+We simply insert into the heap when we encounter a start point, and pop the previous start item if we see a end point.  Then all we need to do is worry about when we encounter a height in the queue that's different from the previous entry.
+
+I originally thought of creating a Node that contains a lot of information such as the x, height, buildingNumber, start or not etc.
+
+Turns out that we really don't need the buildingNumber, because I only care about at any given point of time what are the heights that are in the heap.  When I need to remove the item from the heap, I don't care about the buildingNumber either, i just need to worry about removing the item with that height.  Even if we have multiple buildings with the same height, I don't care which one I remove because I know the other building is still there until we encounter a connecting point with different height.
