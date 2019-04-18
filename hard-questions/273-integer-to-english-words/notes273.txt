@@ -1,0 +1,6 @@
+The idea is simple, we will basically need to repeat the calculation of every 3 digits.
+
+For example, 12,012,000
+Twelve Million Twelve Thousand.
+
+We can solve this by DP, where we solve every 3 digits of 1000, we just need to keep track of the level we're on, so we can determine whether we're at million or billion or thousand.
