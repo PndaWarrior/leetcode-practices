@@ -1,0 +1,17 @@
+Brute Force:
+
+we can search k items in the first window, and for each window, we check the k numbers to find the max, this will give us O(nk).
+
+
+heap:
+Instead of doing a full scan, we could use a heap, instead of scanning the entire k window, we store them in a heap which will be Log(k) for insert and remove, so we get O(nLogk);
+
+
+How do we make it even faster?
+Well what's the behavior of the numbers in our case?  In a window k, if I get a max number, I don't really care what's on the left side of that number because they will get popped later, they are useless to me until my current max number gets removed.
+
+So when I insert a number and I know it's the current max number for window k, then I can simply remove all the items on the left.  I can do this by using a stack.
+
+However, if I need to remove any number, I need to remove from the front, which is what a queue does.
+
+I can use a deque in this case to achieve this.  When I move the window to the right, I need to remove an old item and insert a new item, when I remove I use deque's remove front, and when I insert I check if the next number is bigger than the top items, if it is then I just pop out from the end until the number is bigger than my next number.
