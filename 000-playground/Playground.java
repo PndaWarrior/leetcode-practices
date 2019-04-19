@@ -16,6 +16,7 @@ public class Playground {
         
         minHeap.add(temp);
         System.out.println(minHeap.toString());
+
 	}
 
 }

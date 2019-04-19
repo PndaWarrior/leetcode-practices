@@ -1,0 +1,10 @@
+So let's think about brute force.
+
+Brute force would be find every single combination and find the max of all of them.
+
+However, we have done a lot of unnecessary calculations.
+In the case of [1,8,6,2,5,4,8,3,7]
+
+When I calculate out that index 1 - 8, is 49.  When I check for index 2-8, the water unit is only going to get smaller, it's impossible for it to get bigger.  So we know that only by moving the lower end of the two wall, will it possible for us to increase the water unit.
+
+We can simply start with two pointers one from the front and one from the end.  And only move the pointer of the smaller wall.  Until we've reached the center.
