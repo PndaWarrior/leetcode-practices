@@ -1,0 +1,14 @@
+This is the same idea as question number 76.  we solve this by keep track of a sliding window and a hashmap.
+
+brute force of this problem would be to find all permutation of the window, check the if distinct character number is less than or equal to k, if so then check against the answer.
+
+
+Example Input : eceba, k = 2
+
+We don't need to do this because if I have a string of eceba.  When I get to the point of ece and tries to check eceb, I see that I already have more than 2.  There's no need to check eceba.
+
+I keep track of left boundary i and right boundary j.
+
+I expand j and add the character's count into a map, until I get to a point where the map size is bigger than k, then I need to retract i and start removing characters there.
+
+Since the question asks for "At Most K", this means that as long as map size's length is <= k then it could be considered an answer.
