@@ -3,18 +3,23 @@ import java.util.Map;
 
 class Solution3 {
     public int lengthOfLongestSubstring(String s) {
-
         Map<Character, Integer> map = new HashMap<Character, Integer>();
-        int answer = 0;
 
-        for (int leftWindow = 0, j = 0; j < s.length(); j++) {
-            if(map.containsKey(s.charAt(j))) {
-                leftWindow = (map.get(s.charAt(j))+1 > leftWindow) ? map.get(s.charAt(j)) +1 : leftWindow;
+        int j = 0,
+        answer = 0;
+
+        for(int i = 0; i < s.length(); i++) {
+
+            while(j < s.length() && !map.containsKey(s.charAt(j))) {
+                map.put(s.charAt(j), j);
+                answer = Math.max(answer, j-i+1);
+                j++;
             }
 
-            answer = (answer > (j-leftWindow+1)) ? answer : (j-leftWindow+1);
-            map.put(s.charAt(j), j);
+            map.remove(s.charAt(i));
+
         }
+
         return answer;
     }
 }

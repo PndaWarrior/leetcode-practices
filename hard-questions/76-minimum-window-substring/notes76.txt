@@ -1,0 +1,19 @@
+The idea here is the same as other two pointer sliding windows questions.
+
+The brute force as always is loop through all possible permutation of windows, check if that window has all the characters in the target string.
+
+This is O(t * n^2), we have O(n^2) combination of windows and each time we need to loop through the entire target string.
+
+
+However, we can do two things to optimize.  As we learned in question 003, we can simply keep two pointers i and j, where we expand j as long as we don't see a valid result, and once we see a valid result, we retract i until we no longer see a valid result.
+
+The tricky part to this question is how do we check if we have a valid window now.
+
+The main thing we need to consider is that the target string may have repeating characters.  We need to keep a map of characters in the target string as well as its frequency.  So first thing we do is through that into a hashmap.
+
+Second, how do I know if my current window has the target string.  I keep another hashmap and store all the characters frequency there.
+
+Third, how do I compare the two hashmap?  I don't wnat to loop through the entire hashmap, that will be too slow!.
+What we can do is each time we insert a new character from index j, we check that character's count, if that character's count is now equals to the target map's count, then I increment a counter called "formedCharacters".  Once formedCharacters reach the same amount of all unique characters in my target map, then I know we have a match.
+
+When we retract i, we simply just keep checking if the removed character now has less than the target hashmap, if so then we just subtract 1 from formedCharacters.
