@@ -1,0 +1,9 @@
+We make use of the quickSelect method in quickSort's partition.
+
+The concept of partition is, given a pivot, we put all the numbers smaller than or equal to the pivot to the left, and all the larger number to the right.  This way, we know what index the pivot is in the end.
+
+Of course, we're looking for the kth largest number, so we need to reverse this, so we put all the bigger than and equal to numbers to the left of the pivot.
+
+When we find an index of the pivot, we simply compare the index with k, if index is to the left of k, then we just need to quickSelect again between the left boundary to index - 1, if k is to the right of k, we quickSelect items from index + 1 to the right boundary.   If k = index then we found k and simply return.
+
+However, this algorithm may encounter bad data structure such as a reversed array, so if we simply pick a pivot from the front, we get O(n^2), the best case of this algorithm is O(n) though because if we always find the middle index, we can easily discard half of the array each time.  So our operations will be something like n + n/2 + n/4 + n/8.... (remember becuase we need to scan through the entire portion of the array for comparison which is why it's n)

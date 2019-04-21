@@ -1,0 +1,5 @@
+since we only have 3 possibilities, 0, 1, and 2
+
+We can simply use two pointers, one from the front and one from the end.  If I see a 0, we move the item to the beginning, if we see a 2, we move it to the end.  Then all that's left will stay in the middle as 1s.
+
+We basically use the same idea as partition, but we need to be careful when we move the pointers, if our iterator starts at the front, it's possible that when we see a 2 at the front and we swap it to the end, that new number that moved to the front could be any number.  So in that case we need to check our iterator index again.
