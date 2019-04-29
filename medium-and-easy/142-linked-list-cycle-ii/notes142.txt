@@ -1,0 +1,8 @@
+The simple solution will be to use a pointer to loop through the list, and keep track of visited nodes.  When we move to the next node and it's also in the visited nodes then we return.
+
+
+There's an algorithm called Floyd's Tortoise and Hare algorithm.
+
+It's easy to use two pointers to see if there's any cycle in our ListNode.  If there is a cycle, eventually a faster pointer will meet the slower pointer at a certain intersection.  NOTE, the two pointers will both need to start at head for second operation to work.
+
+Then we have two new intersection, one starting from the head, and one starting from the intersection, when they move 1 by 1, eventually they will always meet at the starting point of the cycle.

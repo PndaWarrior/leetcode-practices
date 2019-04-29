@@ -1,0 +1,12 @@
+To simplify this question, we have an array of distances, need to find the k closest.
+
+We just need to sort the array of distances and then find the K items.
+
+If we sort the full array then it's about O(nLogn)
+
+
+However, we don't really need to sort the full array, we just need to sort it to a point of K, and all the items to the left of K is part of the array.  There's no need to sort the left subarray of K if we can use quickselect to find the Kth element.
+
+So the idea is the same as quicksort, with a slight difference on the sorting condition.
+
+We just need to find K, and then return the answer.

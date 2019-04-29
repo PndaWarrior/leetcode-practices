@@ -1,0 +1,21 @@
+This is another example of dynamic programming.
+
+
+We need to be able to keep track of a continuous subarray of pre product value, so that when I calculate my current max product, I can use the previously determine max product to see if I should include that as my subarray.
+
+However, there's a trick in our question where there may be two negative values
+Consider[2,3,-2,-4]
+
+When we get to index 2, we see that 2 * 3 * -2 = -12, so if we disregard this value, then the DP calculation will just perform -4*-2 which is 8 and give that as the answer.  Obviously the answer is 48 instead.
+
+So we just need to keep a min variable as well as a max variable.
+
+a min value could be
+the current Number
+current number is positive, pre product is negative
+current number is negative pre product is positive
+
+We will then use that to determine our current max pre product, which could be one of the below
+current number is negative, previous is negative
+or current number is positive, previous is positive
+or current Number

@@ -1,5 +1,6 @@
 import java.util.Comparator;
 import java.util.PriorityQueue;
+import java.util.Random;
 
 public class Playground {
 	
@@ -15,7 +16,12 @@ public class Playground {
         double temp = 5;
         
         minHeap.add(temp);
-        System.out.println(minHeap.toString());
+//        System.out.println(minHeap.toString());
+        Random rand = new Random();
+        int temp1 = rand.nextInt(1);
+        
+        System.out.println(temp1);
+        
 
 	}
 

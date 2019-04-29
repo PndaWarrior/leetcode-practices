@@ -1,0 +1,7 @@
+We use two pointer, one going faster and one going slower.
+
+If there's a cycle, then the faster pointer will eventually meet the slower pointer.
+
+What we can do is just check whether the faster pointer ever meets or passes the slower pointer.
+
+Theoretically though, there's proof that the faster pointer will always meet the slower pointer at some point, but in case we pass by it, I also check the pointer where my faster pointer jumps through.

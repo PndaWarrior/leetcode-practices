@@ -1,3 +1,5 @@
+This is a great example of Backtracking.
+
 By intuition, we should solve this by recursion.
 
 This is obvious that it can be solved by recursion when we realize let's say for the case of n = 3
