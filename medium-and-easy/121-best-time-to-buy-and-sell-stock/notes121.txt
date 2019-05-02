@@ -1,0 +1,17 @@
+Another example of dynamic programming.
+
+[7,1,5,3,6,4]
+
+At the very end, I will only sale if the profit of selling at the end is bigger than the profit of selling previously.
+
+We have to keep track of profit that we found.  We also need to keep track out of all the prices we counter so far, what's the minimum price.  Because I can only make profit if I bought a stock earlier.
+
+MinPrice[i] = Math.min(MinPrice[i-1], prices[i])
+
+MaxProfit[i] = Math.max(MaxProfit[i-1], prices[i] - MinPrice[i])
+
+
+This way we will make sure that at the end, MaxProfit[n] is the answer.
+
+
+However, since for each calculation, we only really need to remember what was the last minprice value and the max profit value, so instead of keeping an array of values, we just keep two variables.
