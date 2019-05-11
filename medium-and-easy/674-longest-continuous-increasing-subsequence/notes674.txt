@@ -1,0 +1,7 @@
+This uses the same idea as DP
+
+dp[i] can be calculated from dp[i-1]
+if(nums[i] > nums[i]) dp[i-1] + 1
+else dp[i] = 1
+
+The only differnce is we don't need to keep an array of variables to store, I just need 2 variables, 1 for temp to store my current calculated values and 1 for answer. 
