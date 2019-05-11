@@ -1,0 +1,13 @@
+This answer is simple as long as you draw it out.
+
+We have no restriction on how many transactions we can make, which means we should always perform a transaction as long as we are producing profit.
+
+Draw out the diagram for the below array
+[7,1,5,3,6,4]
+
+we can see that we make profit between index 1 and index 2, as well as between index 3 and index 4.
+
+Now look at [1,2,3,4,5]
+we can make profit if we buy at 0 and sell at index 4, but ALSO, we can make money if buy at 0, sell at 1, buy at 1, sell at 2, buy at 2, sell at 3, buy at 3 sell at 4.
+
+Both of this yields the same solution.  This means that we really don't need to save any data, we just need to add to the answer as long as we a price tomorrow that's bigger than the price today.

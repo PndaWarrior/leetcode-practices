@@ -1,0 +1,15 @@
+There's two parts to solving this question.
+
+First part is to understand that, if we're given a REALLY large K, then this problem just turns into Best Time to Buy and Sell Stock II, where we're given as many transactions as we want.
+
+So to calculate that, we check if k >= prices.length, because if that's the case, we can literally buy and sell every other day and still have transactions left to use.
+
+
+Second Part,
+
+We basically just copy off of the solution we had for Best Time to Buy and Sell Stock III,
+The idea is that, for each transaction j, that's before K allowed transactions, we would need to determine what's the best min price to use, it can be either current price, or a min Price that's after the j-1 sell transaction.
+
+We learned in the previous question that, we can integrate the profit result of j-1 transaction into the min price for j, that way when we try to calculate out profit of j, it will have the information of whether or not to include profit from before.
+
+So to expand on the solution for 2 transaction to K transactions, we just need to create two arrays of size k, one for storing the price and one for the profit.

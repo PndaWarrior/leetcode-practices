@@ -1,0 +1,79 @@
+This is one of the harder question on Dynamic Programming.
+
+This is a follow up question to Best Time to Buy and Sell Stock I.
+
+
+Let's try to do brute force.  We only khnow how to calculate out Best Time to buy and sell stock given only 1 transaction.
+
+BRUTE FORCE:
+
+loop i from 0 -> n
+
+loop j from 0 -> i
+
+We can find maxProfit from 0 to i, and then find maxProfit from i to n using the previous found Best Time to Buy and Sell stock I formula, then add both maxProfit from the two segments of prices for each day i.
+
+This would require O(n^2), because baically we're looping through the entire n number of items for each item n.
+
+
+Optimization
+
+In order to optimize, we will need to know a couple of things.
+
+For each given day i
+1 what's the current best profit for the first transaction
+2 what's the current price I can use to calculate the second profit
+3 Should I recalculate the first profit based on ith days' price
+4 what's the second best profit now
+
+We will run into a problem when we try to mimic exactly as we did for Best Time Buy and Sell Stock 1, because we would need to check whether or not if price[i] - second min price + profit from first segment is bigger than if we just simply do price[i] - first min price.
+If so, calculate maxProfit 2
+If not, then calculate maxProfit 1
+
+Then when we caluclate maxProfit 1, we would need to know whether we used sold at ith day or not, and if so
+minPrice2[i] is price[i]
+else minPrice2[i] is the smaller of the previous minPrice 2 and current price i.
+
+There are way too many if else checks, but it's doable.
+
+
+To make the calculate simpler, we need to think about what exactly is that we need to keep track of.
+Every time we calculate out the max profit of the first transaction, we would need that to make the calculation for the second profit.
+
+if we sell the second time on ith day, profit2[i] = first max profit + prices[i] - minPrice2[i], which = soldPrice1[i] - minPrice1[i] + prices[i] - minPrice2[i].
+However, instead of trying to use the max profit 1 each time to calculate the second max profit.  Instead, we can integrate the min price for the second transaction with the first max profit.
+so minPrice2[i] can just be prices[i] - profit1, because profit1[i] = sell price - buy price, then minPrice2[i] will then become buy price 1 + buy price 2 - sell price 1.
+
+So later when we try to calculate Max Profit, it will just become sell price 2 - buy price 2 + sell price 1 - buy price 1.
+
+Of course, this is only if we sell second transaction on the second day, but we would need to check whether or not we sold on second day,
+so minPrice2 = Math.min(minPrice2, price[i] - profit1)
+
+This works, consider array [0, 3, 1, 4]
+Index 0
+minPrice1 = 0
+minPrice2 = 0
+profit1 = 0
+profit2 = 0
+
+Index 1
+minPrice1 = 0
+profit1 = 3 - 0 = 3
+minPrice2 = Math.min(0, 3-3) = 0
+profit2 = 0
+
+Index 2
+minPrice1 = 0
+profit1 = 3
+minPrice2 = Math.min(0, 1 - 3) = -2
+profit2 = 0
+
+At index 3, a couple things happened
+minPrice1 = 0
+profit1 is now 4
+HOWEVER, minPrice2, it is checking which is smaller, -2 or price[i] - profit1 which is 0
+
+This comparison is basically checking
+if we sell now for the first time, profit1 reset, so my min price 2 resets.  I would only reset if I'm not gaining any additional profit.  However, since I got a -2 from previous min price, then I know there was a dip in the array of prices, and since I can perform a second transaction, I should just use the second transaction to get the maximum profit.
+
+So profit2 = 6, which is price[3] - minPrice2 = 4- (-2) = 6
