@@ -20,7 +20,11 @@ public class Playground {
         Random rand = new Random();
         int temp1 = rand.nextInt(1);
         
-        System.out.println(temp1);
+//        System.out.println(temp1);
+        
+        int[] dp = new int[5];
+        
+        System.out.println(dp[3]);
         
 
 	}

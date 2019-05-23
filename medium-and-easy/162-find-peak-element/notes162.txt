@@ -1,0 +1,13 @@
+The question can be solved in O(n) time by simply doing a linear scan across the array, and return when we find a peak.
+
+However, the question require us to solve this in Log(n) time
+
+In order to solve for logn time, we need to understand that, since we just need to find ONE of the peak, not all of the peaks. we really don't need to scan the entire array.
+
+We just need to know if we see a descending slope what does it mean, and when we see an ascending slope, what does it mean.
+
+Since the two ends are negative infinitive, then we know there must be a peak somewhere, even if the entire array is always ascending or if it's always descending.
+
+if we see an ascending slope, that means the peak is somewhere to the right. if we see a descending slope, then the peak must be somewhere to the left.
+
+So We can easily solve this with a binary search where, we start with a mid point, and depending on whether we see a descending slope or an ascending slope we return.  

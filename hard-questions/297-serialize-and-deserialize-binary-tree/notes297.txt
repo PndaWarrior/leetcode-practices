@@ -1,0 +1,28 @@
+This question isn't too difficult.
+
+Normally, we need to think about how our binary tree is going to be represented in an array.
+
+a binary tree can be represented in an array with Breadth first approach or a Depth first approach,
+
+Example:
+    1
+   / \
+  2   3
+     / \
+    4   5
+
+Breadth first means we scan through the level first.  Example representation is
+
+[1, 2, 3, null, null, 4, 5]
+
+
+Depth first mean we scan as far down as possible first, Example representation is
+
+[1,2,null,null, 3, 4, 5]
+
+
+Either way works but for simplicty purposes it's easier to recurse through the bottom first.
+
+There are also two ways we can solve through the problem, either through recursive means, or just a loop.  If we do a Breadth first approach, it's probably easier to use a loop since for each index, its left child will be at the index of 2*x+1 and right child at 2*x+2
+
+If we do a depth first approach, it's easier recursively, we can just recurse to the left side first and then to the right side.  for each recursive function, we just check whether current is null, if so return null, if not then return node.val

@@ -1,0 +1,9 @@
+This is a DP question with memoization.
+
+We use an array dp to keep track that for dp[n], how many ways can we get to that step.
+
+Since we know at the nth step, there's always two ways to get to it, either 1 step or 2 step.
+
+And if we look, at the (n-1) steps, we could've taken 1 step to get to n, and there might be some number of ways to get to (n-1) step.
+
+our dp function remembers that, so dp[n] = dp[n-1] + dp[n-2];
