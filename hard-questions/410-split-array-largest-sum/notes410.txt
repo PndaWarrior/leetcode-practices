@@ -1,0 +1,69 @@
+Brute Force:
+
+To solve this question using brute force, we need to search through the largest subarray in a splitting combination and determine the smallest of all of them.
+
+The way to do so is to do DFS on all permutations, and then out of the permutation find the largest subarray and then out of all those subarray find the smallest item.
+
+What we can do is to have a DFS function that takes in params ( int[] nums, int currentIndex, int subarrayCount, int currentSum, int currentMax)
+
+When you search through the patterns, there are two possibilities for each index i.
+
+1. The current index i is part of the current subarray
+2. The current index i is part of the next subarray
+
+so we just branch off of the two possibilities.
+
+if i > 0, then it's possible that the current i is part of the current subarray count.
+
+if i < m, then we search dfs of next index, and count subarray + 1 and increment the current sum and current max.
+
+
+
+Dynamic Programming :
+
+This problem can be solved by Dynamic Programming because it satisfies the non-aftereffect property.
+
+We can define DP function as such
+dp[i][j] = Minimum of current largest subarrays
+
+We know that once we determine how to split up nums[0 ... i], this would not be affected no matter how we split nums[i+1 ... n];
+
+First, to determine the sum of subarrays, we should use a accumulative Sum array.  Finding sum from k+1 to i would just be accumSum[i] - accumSum[k];
+
+we initialize the dp[i][j] to be Integer.MAX_VALUE because we are going to find the minimum of largest subarrys.
+
+
+our base case is dp[0][0], this should yield 0, because if we were given 0 numbers, and at the 0th split, we should have 0 as the total Sum
+
+Other base cases are when j = 1, because if we are splitting the array up to only 1 time, then dp[i][1] is just sum[i].
+
+So after this, when we want to find dp[i][2], we use what we determined back in dp[k][1], because if we want to split the array up to the ith index such that ith index is part of 2nd split, there must have been a 1st split from 0 to k, where k < i
+
+so if we want to determine dp[i][j]
+we must loop through all different combinations of splitting method, which could is dp[k][j-1] for 0 < k < i.  We compare all of them to find the min.  But at any given point of index k, we must also compare out of all previous splitting method, what's the maximum, so Math.max(dp[k][j-1], sum[i]-sum[k]), this will yield the largest subarray.  We just need to have a loop to go through all of k, to check the minimum value for all the largest subarrays.
+
+
+
+Binary Search :
+
+This problem doesn't seem like a binary problem at first, but if we reverse the problem a little bit then it seems more obvious.
+
+The original problem states that, given an m split, we want to find a combination that minimizes the largest subarray in a given split.
+
+But if we can turn this problem around a bit, let's see if we can find a value that's the largest subarray, which will yield m number of splits.
+
+Because we know this largest subarray value is the upper limit of all subarrays in this combination, we can simply determine our upper bound and lower bound of our binary search by saying, if the lower bound is the case where we only have 1 number in each of our subarray, and the upper bound is where all the numbers are in our subarray.
+
+So low = largest number in our array, because if there's only 1 number in our subarray, the largest subarray would be the one with the largest number
+
+high = sum of all numbers
+
+To do binary search, we just need to keep looking for the mid point, in this case is low + (high - low) / 2, and check if using that number, can split up the array in a way that all the subarray are smaller than or equal to the limit.
+
+If the number of split is too large, then our limit is too small, so we set low to mid + 1 so in the next iteration we simply check from mid to upper limit.
+
+If the number of split is too small, then our limit is too large, so we set high to mid, so next iteration we will be checking from low to mid.
+
+This way we can perform binary search on the value of the subarrays, so in the end our time complexity is
+
+O(n * log(sum(nums))), because for each iteration we are effectively dropping half of the possible values, and for each iteration we need to iterate through all of n numbers to find out how many split there are.

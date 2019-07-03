@@ -1,0 +1,11 @@
+Simply ask the interviewer, can I solve it using built in function of string, or should I loop through.
+
+To loop through it is simple, we just need to start from the end, if I see a character, make it upppercase and add it to the final answer, we keep a count variable, so every time count reaches K, we add a dash, at the end we remove a prefix dash.
+
+
+If we can use prebuilt function, we just need to first turn the string into all upper case and remove all dashes.
+
+Then we generate a string builder so we can easily insert into the string.
+
+Then we just need to insert at each multiple of K a dash.
+for (int i = K; i < temp.length(); i += K)

@@ -1,0 +1,22 @@
+We need to first break down the question in simple terms.
+
+We're given an array of integers.  We need to calculate how many "Good" starting indexes there are in this array.
+
+An index is good if starting from this number, it can perform any number of "jumps" to reach the end.
+
+There are two types of jumps, at the odd number jumps, which means the 1st, 3rd, 5th, and so on jumps, it can only go to a number that's larger than or equal to the current number.  If there are more than one number that's larger than or equal to the current number, we must jump to the one with values closest to the current number, and if there's more number like that, then we need to choose the index that's the closest.
+
+Same idea with odd number jumps, but jump needs to go to a number that's smaller than or equals to the current number.
+
+
+The idea is to use DP to help us solve this problem.  We know an index is good if it can jump to the end.  So starting from the end, that's definitely a good index because it doesn't need to jump anywhere.
+
+so dp[n-1] is true
+dp[n-2] is true only if starting from here, it can jump to the end.  However, it's possible that a previous index can jump to here so it's an even jump next rather than an odd jump, so we need to store the state for even jumps as well.
+
+dp[n-3] may be able to perform an odd jump that reaches n-2, and then n-2 performs an even jump to n-1.
+
+This tells me that we need to store two state, one where if performing an odd jump from that index, and one where if we are performing an even jump from that index.
+
+
+To calculate out which index to jump to, we just need to use any data structure that can help us keep a sorting order, one way is to just do an insertion sort ourselves, the other is to use TreeMaps in java, which keep tracks of the sorting order of keys.  W4e store the values in the array as keys in the map, and then the index of the array as the values in the map.  This way we can determine given an index, where should it jump next.  If it is an odd jump, we find in the map the higher key above our current value.  that's the index we jump to, so odd[i] = even[jumpnext(i)]. and vice versa for even[i]

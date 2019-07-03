@@ -1,0 +1,33 @@
+To solve this problem, we need to understand how we would solve this just normally.
+
+Example "great" and "rgeat";
+
+If "great" was scrambled at first character, it would've produced "reatg", or last character "tgrea", or it could've been deeper in the binary tree.
+
+In this case, this is scrambled when broken at first two character, "gr", "eat", and we scrambled the first two character.
+
+To check whether "great" and "rgeat" is scrmalbed, we need to check every possible combination of where it could've been scrambled and check to see if they are equal.
+
+One way to do this is just to search all possible solution,
+
+checkScramble[great][rgeat] =
+
+checkScramble[gr][rg] && checkScramble [eat][eat]
+
+or checkScramble[g][r] && checkScramble[reat][geat]
+
+or checkScramble[gre][rge] && checkScrmable[at][at]
+
+orcheckScramble[gr][at] && checkScramble [eat][rge]
+
+Basically for a string length, we have that many ways that the words could've been scrambled at this time.
+
+Searching through all of the possibility would be too slow if we need to repeat search each time.  this is where memoization comes in.
+
+We use a dp variable function to remember things we've calculated.  our dp is a 4d array int[][][][] dp, where we save the result of start string 1, end string 1, start string 2, end string 2, on whether or not it's a scramble of each other.
+
+however, we really only need 3d array, because we know that two strings must have the same length, or else they can't be scrambled of each other.
+
+So instead of have a 3d array, int[][][] dp, where we save the result for start 1, start 2, and length of string.
+
+For each iteration, we check the substring of the characters to see if they are scrambled of each other, it's easier this way because we can check easily check whether two substrings are even valid for comparison by just checking whether they have the same characters.  So we have a isValid function to check two strings, we sort the characters and check if they have the same charcters.
