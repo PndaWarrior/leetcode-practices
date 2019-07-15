@@ -1,0 +1,15 @@
+The solution to this problem is simply recursively traverse through the nodes using Depth first search.
+
+Each node can be considered to be the number of left nodes + number of right nodes + 1.
+
+
+A more advanced solution requires understanding of how complete binary trees work.
+The above solution will take O(n) times.
+
+However, since we know a complete binary tree must be balanced and filled all the way till the bottom.  We can use this knowledge to make our calculate faster.
+
+First we can determine the depth of the tree, let's say the tree depth is 4, so the first 3 layers must be filled.  So number of nodes for the first 3 layers is 2^3 - 1.
+
+At the 4th layer, we know that the nodes must be filled from the left side, so we can perform a binary search method on the bottom layer, first we check the middle node, in this case we can check either the most right node of left side or most left node of right side.  Either way, we can determine whether there's a node there, if there is then we check the right side, if not then we check the left side.
+
+Then we can calculate from there.  The number of filled nodes will be determine once we figure out the very last node that's filled at the bottom level.

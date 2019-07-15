@@ -1,0 +1,43 @@
+To solve this problem, we need to think about how we are going to associate our equations.
+
+For example, a / b = 2.0 and b / c = 3.0
+
+I need a way to be able to associate a / b = 2.0, the best way to do this is through a map.
+Given a / b = 2.0, I can also say that b / a = 0.5
+
+However, it's possible that there are multiple equations involving a, maybe another equation where a / d = 5.0
+
+I can have a Map inside a Map, where the first map maps the Dividend string and the associated divisors, then the inner map will map the divisor string to the value.
+
+To make things simpler, I put together an object that stores the dividend string as well as the Map in one object.
+
+
+First we initialize the maps, all we need to do is loop through the equations list, check if a current mapping for a dividend is already there, if so then add to that, if not then create a new one.  I do so with both the divisor and the dividend, this way the map will complete with all possible paths.
+
+Then I need to loop through the queries to evaluate the results.
+I can first set up two base cases, if one of the variables in the query equation doesn't exist in my map, then it's not possible to evaluate.  Since my map has a complete set of all shown characters in the equations list.
+
+Then if I see both characters in the query equation are the same, then I can simply give 1 as the value.
+
+Then I need to consider how to evaluate the division.
+
+I know that in my map, the key is always the dividend and the inside map is always for the divisor.  However, I don't know how many times I need to search to find the final equation, becuase it's possible to have situations like
+a/b = x, b/c = y, c/d = z, and we need to find a/d.
+
+So we need to use a depth first search approach, we recursively loop through all division patterns until I get to the end.
+
+However, I need to keep track of keys I've visited, because if I've visited a character previously, I shouldn't visit it again later or else I could've already gotten the answer in a shorter path.
+
+For this depth first search algorithm, I need to pass in a visited set to keep track of items i've found, the current dividend, the divisor, the links map that I've created, and also what's the current result.
+
+It's important to note that the currentResult will help us calculate the answer later,
+
+Consider the example a/b = 2.0, b/c = 3.0, c/d = 5.0
+When we want to evaluate a/d, I need to evaluate a/b * b/c * c/d, which will give me a/d.
+
+So all we need to do when calculating the result is to check pervious result * the current mapping's value
+
+
+Then trick here though is that we need to check for each possible combination, so there are many cases where we will reach -1 as a result, because that's our base case if we dont' find any match.  So what we do is save the currentResult, and return the currentResult only if it's not equal to -1.  Or else then just let the loop die and return -1 at the end.
+
+This way we will make sure that we always only return -1 if we don't find any positive value.

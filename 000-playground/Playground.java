@@ -16,7 +16,13 @@ public class Playground {
         TreeMap<Integer, Integer> map = new TreeMap();
         
         
-
+        String helloWorld = "";
+        
+        helloWorld += "hello";
+        
+        helloWorld += "World";
+        
+        System.out.println(helloWorld);
         
         
 	}

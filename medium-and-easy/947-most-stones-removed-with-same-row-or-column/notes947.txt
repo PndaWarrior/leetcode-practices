@@ -1,0 +1,18 @@
+This question can be solved using Union Find
+
+The first intuition is that, we can compare between all the stones' coordinates, if two stones have the same row or column, we simply mark them to have the same parent.
+
+In the end, all the nodes will end up with the same parent if they share columns or rows, so we can calculate out the number of moves by subtracting out the total number of stones to the number of unique parents.
+
+
+However, this is O(N^2) because we are comparing each stone.
+
+
+To shorten this time complexity, we can consider the columns and rows as individual values.
+
+Given a stone has coordinate [0,1], we can consider these two to have the same parent.
+Later, when we see another stone [1,1], since the row 1 is already connected to the same parent as column 1, so now column 1 will also have the same parent.  Basically we are running union function between the columns and the rows.  This way we don't need to compare each stone individually, we only need to loop through the stones once to union all the columns and rows.
+
+Once we've union all the columns and rows, we just need to loop through the stones one more time, and this time we only need to check the row of the stone (because given this stone's column, all other stones with same column have already been union to this column, and at the beginning we've initialized it so for this stone the column and row is union).
+
+The number of unique parents are the number of moves we can't make, so subtract total number of stones to the unique parents and we get the answer.

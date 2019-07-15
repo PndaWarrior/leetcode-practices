@@ -1,0 +1,22 @@
+This can be achieved by all built in functions of strings and arrays in java.
+
+First we just trim the string to get rid of spaces in the front and the back
+
+Then we split up the string by it's spaces to turn this into an array for working
+
+
+Then it's a small trick, we turn the array into a stream by calling Arrays.stream(resultArray) then call the .filter() function of the stream to apply predicate condition on the stream, where the predicate condition is written in Lambda str -> !str.equals("")  This means only pick the cells in the stream array where the string is not an empty string.
+
+Then to close out the stream, we call the .toArray() function and reference the String array constructor inside .toArray(String[]::new)
+
+
+Once we have the array, we can simply reverse the indexes using a simple for loop, then finally use String.join(" ", resultArray)
+
+
+This is quite slow but it saves a lot of space in memory.
+
+
+
+Second option is to use two pointers, loop through the string as if it's one big array, when the left pointer hits a space we simply ignore, when it hits a character, then the right pointer moves until it hits a space.  Once we do that, we simply append onto a string builder the substring of start to end
+
+NOTE we must use string builder, because it's faster to work with one instance of string builder, rather than having a string that we keep appending onto.  If we use a pure string, every time we += onto the new word it's an opeation to create a new string.

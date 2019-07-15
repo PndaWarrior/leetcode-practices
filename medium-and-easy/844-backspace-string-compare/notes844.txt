@@ -1,0 +1,9 @@
+The initial thought to solve this is to start from the front and build out the string.
+
+This will take about O(N) time and will require O(N) space, because we would need to store another full string.
+
+
+
+However, if we start from the back avoid a lot of problem where we need to back track when we see a backspace.
+
+If we start from the back, we can consider when we meet a #, we need to keep track of number of backspaces, then when we see a normal character, we can simply move on with the next part of the string.
