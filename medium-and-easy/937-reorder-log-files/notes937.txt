@@ -1,0 +1,15 @@
+This can be simply done as long as you implement the comparator correctly.
+
+We can simply use a comparator in java and sort the logs, so there are 4 cases to consider
+
+if both are digits, then comparator should return 0 to return original ordered
+if first one is letter and second is digit, first one is in the front
+if second one is letter and first is digit, then put second one front
+lastly, both are letters, so use string .compareTo function to sort by alphabet for anything after the identifier
+
+
+The thing is we need to optimize this function.
+
+Best way to optimize this is by taking care of the split function, if we have to split each log when we compare during the sort, it will only add on the calculation time.
+
+We can simply create another Log object that stores the letters content and identifier, so instead of having to split each time, we simply compare the Log object.

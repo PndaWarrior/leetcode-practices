@@ -28,7 +28,9 @@ public class LambdaPractice {
 		
 		//Then we can load the array in a stream and filter out empty characters in the case where there are multiple spaces between characters
 		
-		String[] removedSpaces = Arrays.stream(stringArray).filter( s -> !s.equals("")).toArray(String[]::new);
+		String[] removedSpaces = Arrays.stream(stringArray).filter( s -> {
+			return !s.equals("");
+			}).toArray(String[]::new);
 		
 		System.out.println(Arrays.toString(removedSpaces));
 		

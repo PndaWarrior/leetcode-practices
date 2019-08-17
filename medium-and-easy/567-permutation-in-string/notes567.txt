@@ -1,0 +1,37 @@
+This question is really similar to other questions related to finding target characters from a source String
+
+Some key points we need to remember for this problem though
+1. I need to keep count of characters in my target, because I need exact matches
+2. I need to keep count of characters in my window, or else I can't compare to target
+3. As I move the right side of the window, I may find a match for a specific character or # of character exceed what I needed from target
+4. As I move the left side of window, I may find a match for a specific character or # of character is less than what I needed from target
+5. How to determine a match is found?
+
+
+For number 1 and 2, it's simple, I just need two maps.
+
+For number 3 and 4, this is not difficult either, I just need to make sure that as I'm moving the window, if I add a character to the right, I check the count of the character between window and target, same with moving the left window.
+
+
+The trickiest part is number 5, how should I know if a match is found?
+
+
+Example :
+"aaabbbcc"
+"aaaaaaaaabbbccc"
+
+First thing I thought of is to keep track of a variable called formedCharacters, and if I see that I have 3 a in my map, then I increased formedCharacters.  Vice versa when i remove characters.
+
+Problem is though, I may run into situations like above, when there are 9 a, when I get to the first 3 a in my window, I will incrased formedCharacters to 1, then when I see there are 4 a, I have to now decrease formedCharactres to 0, and then I cannot decrease formedCharacters anymore when I see 5 a because I've already decreased it before, if i keep decreasing it then I will have negative formedCharacters
+
+Then I need to keep track of another set, which contains all the characters I've seen so far in my formedCharacters.  The idea should work but it just gets too complicated.
+
+
+Instead of thinking it this way, let's think again why is it that I have to keep track of seen characters in my formedCharacters, that's because I don't want to count characters that doesn't exist in my dictionary.  Well, what if instead of utilizing a normal HashMap, let's create a map of int arrays that consists of counts of all characters, if a character doesn't exist in my map, then it simply has count of 0.  (technically I can do this in my original map too but it's much easier to do it with int array since I can calculate out index by doing char - 'a')
+
+
+Once we do this, then everything else is straight forward.  We first loop through the target to determine what the count of each characters is in the map, and at the same time we count the characters in the window of our source string and store in the window map.
+
+Then we simply loop through again to check how many characters matched, if we get a match then the matched characters = 26 (because non existing characterse would have count of 0)
+
+Now that I have the map for window, and the map for target, I simply need to move the left and right pointer respectively and check for matches.

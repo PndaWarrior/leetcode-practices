@@ -1,0 +1,40 @@
+This problem is simliar to other mapping between two strings prolbem.
+
+What we need to do is somehow map the characters to from one target string to one source string.
+
+
+Different from "567 Permutation In String", I'm only using one map array instead of 2.  The idea is that if I have a dictionary map array of 26, where it stores the counts of existing characters in target string.  I can use this same map as I go through the characters of the window in source string, and I would only need to minus count of a character when I add a string in the window, and add count of a character when I remove from the window.
+
+
+Example : target String "aabb", source String "aaabbbccc"
+
+My map will be initiated with new int[26];
+
+I first loop through the target string, so char at index 0 is 'a', 'a' - 'a' = 0.  So after looping through the target string, map = [2, 2]
+
+then I loop through the source string up to the window size, which is 4.  For each character in the window, I minus the count in the map.
+
+So at index 0, character = a, index = 0
+map = [1,2]
+
+index 1, charter = a, index = 0
+map = [0, 2]
+
+index 2, char = a, index 0
+map = [-1, 2]
+
+index 3, char = b, index 1
+map = [-1, 1]
+
+Then I loop through to count how many indexes have 0 as the count, if it's 0 that means for that character I have the exact same matching number of letters between the dictionary and the source.  This will yield 24, since character and b do not have the right amount of counts in characters.
+
+Then I slide the window to the right
+left pointer = index 0 -> character a
+right pointer = index 4 -> character b
+
+so once again, because i'm adding character in the window, i need to subtract the count of character b, however, this time I'm also removing the left pointer character from the window, so I need to add the count of character a.  Thus
+map = [0,0]
+
+For both index i'm modifying, if I see a 0, then I need to add the count of lettersMatched.  Once done, I check if lettersMatched == 26, if so, then it means I have a matching anagram.
+
+One trick is that, I may have repeating characters, I can only decrease the lettersMatched once for any repeating characters, so I need to add a condition to check that if count is -1 for a character then I decrease lettersMatched, if it's -2 or on, i cannot decrease lettersMatched.  Vice versa for when I'm removing left character

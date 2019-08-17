@@ -1,0 +1,15 @@
+This problem is easy to be solved as long as you slowly and calmly think about the problem.
+
+
+We want to construct a tree.  No matter if it's a binary tree or what, it's most likely solvable using recursion.
+
+In this case a quad tree is based on nodes that have 4 children.
+
+The only tricky part about this problem is that, if I have 4 children that are all leafs and all are wtih the same value, I can turn myself into a leaf and disregard any other children.
+
+
+So all we need to do is create a recursion function, we start off at the very top and try to create a node.
+
+To create the current node, I need to first create the topLeft, topRight, bottomLeft, and bottomRight nodes to check whether they are leafs and whether they have all same values.  If they do then I just return a new node with no children and my current value as any one of the previous found children.
+
+The base case is simple, if I'm trying to create a node from a grid with lefth 1, simply return a new node which is a leaf.

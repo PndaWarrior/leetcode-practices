@@ -4,14 +4,14 @@ for each index i, look to the right and the left to see what the max right and l
 
 
 2. Split this problem in two
-However, we don't really need to do this.  Let's think about how does a rain water capture work
+Let's think about how does a rain water capture work
 
 consider the case
 [0,1,0,2,1,0,1,3,2,1,2,1]
 
 At index 2, we know that there's a wall to the right, which is 2, the left wall is 1 so we know at index 2 we trap 1 unit of water.  Calculation is Min(leftWall, rightWall) - current height.
 
-However, we don't this will be the same case if the right wall is 3, or 4, or 5.  So we know it doesn't really matter what the bigger wall is, since the smaller wall is what dictates the unit of water captured
+However, we know this will be the same case if the right wall is 3, or 4, or 5.  So we know it doesn't really matter what the bigger wall is, since the smaller wall is what dictates the unit of water captured
 
 We can simplify this problem by saying that, if I know what's the tallest wall is at one certain location, I can split this problem into two part, where all the units to the left of the big wall can be calculated by - currentLeftMax - currentHeight, but if currentHeight is taller, then the currentHeight replaces currentLeftMax.
 
