@@ -1,0 +1,47 @@
+This problem looks simple to start but it has a good amount of edge cases you must consider.
+
+Be extra careful about integeres, we need to think about the range of positive values.  In this case, it is [-2^31, 2-31 - 1]
+
+When we do division, we can perform all needed operation as if they are positive, and just add onto the negative sign at the end if it's negative.
+
+Couple of simple edge cases,
+
+1) if divisor == 1, simply return dividend
+2) if divisor == -1, return -dividend
+
+This is because anything divided by 1 is always itself
+
+3) Then if divisor == 2, simply move bit over by 1 so return dividend >> 1;
+4) if divisor == -2, simply move bit over by 1 and negate it so return -dividend >> 2;
+
+This is a simple binary operation that makes our calculation for divisor 2 much faster
+
+
+5) At the 2nd edge case above, if dividend = -2^31, and if we simply perform -dividend, this will result in -2^31 again, because of silent overflow.  This is because -2^31 * -1 = 2^31, and max positive number is 2^31-1, so positive 2^31 = Integer.MAX_VALUE + 1, meaning it overflowed and became Integer.MIN_VALUE
+
+This means we need to take care of the edge cases when dividend or divisor = Integer.MIN_VALUE
+So if dividend = -2^31, and divisor = -1, technically we should return 2^31, but since that's overflow, so we return Integer.MAX_VALUE
+
+6) If divisor = -2^31, then we know that later when we want to do division operation, we would turn this into a positive number 2^31, this will overflow.  So we have an edge case to check if divisor = -2^31, then unless dividend is also -2^31 (in which case we return 1), or else when we do any other operation, the divisor would be 2^31 which is the largest possible int there is, so we simply return 0
+
+These 6 are all the simple edge cases
+
+Then we have another thing we need to check, if dividend = -2^31, and divisor is any other number, then if we simply try to turn this into a positive division operation, dividend would not be able to be divided because Math.abs(-2^31) = 2^31 = -2^31
+
+So if we have dividend == -2^31, then we have to perform a one time operation to pretend we're diving it once.  So dividend += Math.abs(divisor) and add answer count ++;  This way, dividend is no longer Integer.MIN_VALUE, so we can perform positive division operation.
+
+
+
+Simple operation:
+We can simply iterative loop until the dividend can no longer be subtracted from the divisor, and count how many times we've subtracted the dividend by the divisor.
+
+Trick:
+For large numbers, such as dividend = 1000, and divisor = 1.  Instead of looping through one thousand time to count, we can simply double our weight of count each time.
+For Example
+Set temp = divisor = 1
+set count = 1;
+then WHILE temp + temp doesn't exceed the dividend, and temp + temp doesn't overflow, we simply add temp += temp and count += count.
+What this will do is doulbe our weight of temp each time.  So temp becomes 2, and then 4, and then 8, and then 16, and then 32, and then 64, and so on.  This will save us a tremendous amount of time.
+
+Originally our operation would take about O(n) times worst case, n is the dividend
+This will turn our operation into Log(n) times, because we can double our divisor each time
